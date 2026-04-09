@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painting Tips &amp; Insights | Eleven Coats Painting Blog</title>
+  <meta name="description" content="Real talk about painting in Phoenix and Scottsdale. Pricing breakdowns, color guides, what to watch out for when hiring a contractor — no fluff, no upsell." />
+  <link rel="canonical" href="https://elevencoatspainting.com/blog" />
+  <link rel="icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/eleven-coats-logo_d4a00c82.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #14131e; --bg-footer: #0f0e18; --bg-card: #1a1929;
+      --orange: #e8742a; --teal: #4e8593; --white: #f5f4f0;
+      --muted: rgba(245,244,240,0.55); --border: rgba(255,255,255,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background 0.3s, padding 0.3s; padding: 1.25rem 0; }
+    header.scrolled { background: rgba(20,19,30,0.97); padding: 0.75rem 0; backdrop-filter: blur(8px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logo img { height: 2.5rem; width: 2.5rem; object-fit: contain; }
+    .nav-logo-text .brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 900; color: var(--white); letter-spacing: 0.05em; line-height: 1; }
+    .nav-logo-text .sub { font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); font-weight: 500; margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.9rem; color: rgba(245,244,240,0.8); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-phone { font-size: 0.875rem; color: rgba(245,244,240,0.8); }
+    .btn-primary { background: var(--orange); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; font-size: 0.875rem; font-weight: 600; transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.9; }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-phone { display: none; } }
+
+    /* HERO */
+    .hero { padding-top: 140px; padding-bottom: 80px; }
+    .hero-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-label::after { content: ''; display: block; width: 2.5rem; height: 2px; background: var(--orange); }
+    .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 1.75rem; }
+    .hero h1 .line-white { color: var(--white); display: block; }
+    .hero h1 .line-orange { color: var(--orange); display: block; }
+    .hero-sub { font-size: 1.125rem; color: var(--muted); max-width: 600px; line-height: 1.7; }
+
+    /* FEATURED POST */
+    .featured { padding: 0 0 60px; }
+    .featured-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: border-color 0.2s; }
+    .featured-card:hover { border-color: rgba(232,116,42,0.3); }
+    @media (max-width: 768px) { .featured-card { grid-template-columns: 1fr; } }
+    .featured-img { background: linear-gradient(135deg, #1e1c30 0%, #252336 50%, #1a2535 100%); min-height: 340px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .featured-img-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .featured-tag { position: absolute; top: 1.25rem; left: 1.25rem; background: var(--orange); color: var(--white); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 2px; }
+    .featured-body { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .post-meta { font-size: 0.75rem; color: var(--teal); letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .featured-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 900; text-transform: uppercase; line-height: 1; color: var(--white); margin-bottom: 1rem; }
+    .featured-excerpt { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .read-more { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--orange); transition: gap 0.2s; }
+    .read-more:hover { gap: 0.75rem; }
+
+    /* BLOG GRID */
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding-bottom: 80px; }
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
+    .blog-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+    .blog-card:hover { border-color: rgba(232,116,42,0.3); transform: translateY(-2px); }
+    .blog-card-img { background: linear-gradient(135deg, #1e1c30 0%, #252336 100%); height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .blog-card-img-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .blog-tag { position: absolute; top: 1rem; left: 1rem; background: rgba(78,133,147,0.2); color: var(--teal); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 2px; border: 1px solid rgba(78,133,147,0.3); }
+    .blog-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-meta { font-size: 0.72rem; color: var(--teal); margin-bottom: 0.6rem; }
+    .blog-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 900; text-transform: uppercase; line-height: 1.05; color: var(--white); margin-bottom: 0.75rem; }
+    .blog-card-excerpt { font-size: 0.875rem; color: var(--muted); line-height: 1.65; flex: 1; }
+    .blog-card-footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .blog-card-footer a { font-size: 0.8rem; font-weight: 600; color: var(--orange); }
+
+    /* SECTION LABEL */
+    .section-header { padding-bottom: 2rem; }
+    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 900; text-transform: uppercase; color: var(--white); }
+
+    /* CTA BAND */
+    .cta-band { background: rgba(232,116,42,0.08); border-top: 1px solid rgba(232,116,42,0.2); border-bottom: 1px solid rgba(232,116,42,0.2); padding: 80px 0; }
+    .cta-band h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; margin-bottom: 1rem; }
+    .cta-band p { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 520px; }
+    .btn-large { background: var(--orange); color: var(--white); padding: 1rem 2.5rem; border-radius: 4px; font-size: 1rem; font-weight: 700; display: inline-block; transition: opacity 0.2s; text-transform: uppercase; letter-spacing: 0.05em; }
+    .btn-large:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer { background: var(--bg-footer); border-top: 1px solid var(--border); }
+    .footer-inner { padding: 4rem 0; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-brand .brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 900; letter-spacing: 0.05em; }
+    .footer-brand .sub { font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-top: 1px; }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .footer-logo img { height: 3rem; width: 3rem; object-fit: contain; }
+    .footer-tagline { color: var(--muted); font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; max-width: 320px; }
+    .footer-badge { font-size: 0.75rem; color: var(--muted); }
+    .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: var(--muted); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-col address { font-style: normal; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col address a, .footer-col address span { font-size: 0.875rem; color: var(--muted); }
+    .footer-bottom { border-top: 1px solid var(--border); padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom span { font-size: 0.8rem; color: var(--muted); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { font-size: 0.8rem; color: var(--muted); transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--white); }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/eleven-coats-logo_d4a00c82.png" alt="Eleven Coats Painting" />
+        <div class="nav-logo-text">
+          <div class="brand">ELEVEN COATS</div>
+          <div class="sub">Painting</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="/services">Services</a>
+        <a href="/commercial">Commercial</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="nav-phone">📞 (602) 888-1281</span>
+        <a href="/contact" class="btn-primary">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-label">Blog</div>
+      <h1>
+        <span class="line-white">REAL TALK</span>
+        <span class="line-orange">ABOUT PAINT.</span>
+      </h1>
+      <p class="hero-sub">What painting actually costs in Phoenix, which colors hold up in Arizona heat, and how to avoid getting taken by a contractor. No ads, no affiliate links, no fluff.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED POST -->
+  <section class="featured">
+    <div class="container">
+      <div class="featured-card">
+        <div class="featured-img">
+          <span class="featured-tag">Featured</span>
+          <div class="featured-img-text">Photo Coming Soon</div>
+        </div>
+        <div class="featured-body">
+          <div class="post-meta">PRICING GUIDE &nbsp;·&nbsp; 8 MIN READ</div>
+          <h2 class="featured-title">How Much Does It Actually Cost to Paint a House in Phoenix? (2026)</h2>
+          <p class="featured-excerpt">Most "pricing guides" online give you a range so wide it's useless —  $1,000 to $10,000." Thanks. Here are actual numbers from real jobs in the Phoenix metro, broken out by job type, square footage, and paint quality. Use this before you call anyone.</p>
+          <a href="/blog/how-much-to-paint-house-phoenix" class="read-more">Read the full breakdown →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL POSTS -->
+  <section style="padding-bottom: 20px;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">All Articles</div>
+        <div class="section-title">MORE FROM THE BLOG</div>
+      </div>
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <span class="blog-tag">Color Guide</span>
+            <div class="blog-card-img-text">Photo Coming Soon</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">COLOR GUIDE &nbsp;·&nbsp; 6 MIN READ</div>
+            <h3 class="blog-card-title">Exterior Paint Colors That Actually Hold Up in Arizona Heat</h3>
+            <p class="blog-card-excerpt">UV in Phoenix is 30% more intense than the national average. Here's what fades fast, what holds, and which Sherwin-Williams and Benjamin Moore colors our crews have seen survive a decade on Valley homes.</p>
+            <div class="blog-card-footer">
+              <a href="/blog/exterior-paint-colors-arizona">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <span class="blog-tag">Hiring Tips</span>
+            <div class="blog-card-img-text">Photo Coming Soon</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">HIRING GUIDE &nbsp;·&nbsp; 5 MIN READ</div>
+            <h3 class="blog-card-title">7 Questions to Ask Before You Hire Any Painting Contractor</h3>
+            <p class="blog-card-excerpt">Most homeowners hire painters the same way they pick a restaurant — they look at the price and hope for the best. Here are the seven questions that separate a professional shop from a liability waiting to happen.</p>
+            <div class="blog-card-footer">
+              <a href="/blog/questions-ask-painting-contractor">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <span class="blog-tag">Prep Guide</span>
+            <div class="blog-card-img-text">Photo Coming Soon</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">HOW-TO &nbsp;·&nbsp; 4 MIN READ</div>
+            <h3 class="blog-card-title">What to Do (and Not Do) Before Your Painting Crew Shows Up</h3>
+            <p class="blog-card-excerpt">You don't need to do much. But the few things you do need to handle can make the difference between a smooth 3-day job and a 5-day job with two callbacks. Here's the actual list.</p>
+            <div class="blog-card-footer">
+              <a href="/blog/prepare-for-painters">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <span class="blog-tag">Cabinets</span>
+            <div class="blog-card-img-text">Photo Coming Soon</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">CABINET GUIDE &nbsp;·&nbsp; 5 MIN READ</div>
+            <h3 class="blog-card-title">Cabinet Painting vs. Replacement: What $3,500 Gets You</h3>
+            <p class="blog-card-excerpt">A full kitchen cabinet replacement runs $15,000–$40,000. A professional cabinet refinishing job runs $2,800–$5,500. Here's exactly what you get with each, and when one beats the other.</p>
+            <div class="blog-card-footer">
+              <a href="/blog/cabinet-painting-vs-replacement">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <span class="blog-tag">Stucco</span>
+            <div class="blog-card-img-text">Photo Coming Soon</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">TECHNICAL &nbsp;·&nbsp; 7 MIN READ</div>
+            <h3 class="blog-card-title">Why Your Stucco is Cracking — and What Needs to Happen Before You Paint</h3>
+            <p class="blog-card-excerpt">Paint doesn't fix cracks. Paint over cracks just means you'll be looking at the same crack again in two years, through a fresh coat. Here's what proper stucco repair looks like and why it matters more than the paint brand.</p>
+            <div class="blog-card-footer">
+              <a href="/blog/stucco-cracks-repair-before-painting">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-img">
+            <span class="blog-tag">HOA</span>
+            <div class="blog-card-img-text">Photo Coming Soon</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">COMMERCIAL &nbsp;·&nbsp; 6 MIN READ</div>
+            <h3 class="blog-card-title">HOA Repaint Bidding: Why the Lowest Bid Almost Always Costs More</h3>
+            <p class="blog-card-excerpt">We've re-painted communities that were painted 18 months ago by someone else. Here's the economics of a low-bid HOA repaint, and what property managers and boards should actually be comparing when they evaluate proposals.</p>
+            <div class="blog-card-footer">
+              <a href="/blog/hoa-repaint-bidding-guide">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2><span style="color:var(--white)">READY TO STOP</span> <span style="color:var(--orange)">READING?</span></h2>
+      <p>We'll walk your project, give you a written quote, and answer every question you have — in person, without a sales pitch.</p>
+      <a href="/contact" class="btn-large">Get a Free Estimate</a>
+      &nbsp;&nbsp;
+      <a href="tel:6028881281" class="btn-large" style="background: transparent; border: 1px solid rgba(245,244,240,0.2); color: var(--white);">(602) 888-1281</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/eleven-coats-logo_d4a00c82.png" alt="Eleven Coats Painting" />
+          <div class="footer-brand">
+            <div class="brand">ELEVEN COATS</div>
+            <div class="sub">Painting</div>
+          </div>
+        </div>
+        <p class="footer-tagline">The right people. Whatever it takes. Serving Scottsdale, Phoenix, and the greater Valley since 1997.</p>
+        <div class="footer-badge">4.7 · 131 Reviews &nbsp;·&nbsp; 9-Year Labor &amp; Material Warranty</div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/exterior-painting">Exterior Painting</a></li>
+          <li><a href="/interior-painting">Interior Painting</a></li>
+          <li><a href="/cabinet-refinishing">Cabinet Refinishing</a></li>
+          <li><a href="/commercial">Commercial Painting</a></li>
+          <li><a href="/pricing">Pricing Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="tel:6028881281">(602) 888-1281</a>
+          <a href="mailto:jim@11coats.com">jim@11coats.com</a>
+          <span>Scottsdale &amp; Phoenix, AZ</span>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/scottsdale-painters">Scottsdale</a></li>
+          <li><a href="/phoenix-painters">Phoenix</a></li>
+          <li><a href="/paradise-valley-painters">Paradise Valley</a></li>
+          <li><a href="/chandler-painters">Chandler</a></li>
+          <li><a href="/gilbert-painters">Gilbert</a></li>
+          <li><a href="/mesa-painters">Mesa</a></li>
+          <li><a href="/tempe-painters">Tempe</a></li>
+          <li><a href="/peoria-painters">Peoria</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Eleven Coats Painting. All rights reserved. Arizona ROC #360099.</span>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/sms-terms">SMS Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
