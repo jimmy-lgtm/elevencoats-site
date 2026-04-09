@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painting FAQ | Common Questions Answered | Eleven Coats Painting</title>
+  <meta name="description" content="Straight answers to the questions every homeowner asks before hiring a painter in Phoenix and Scottsdale. No fluff, no sales pitch — just the truth." />
+  <link rel="canonical" href="https://elevencoatspainting.com/faq" />
+  <link rel="icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/eleven-coats-logo_d4a00c82.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #14131e;
+      --bg-footer: #0f0e18;
+      --orange: #e8742a;
+      --teal: #4e8593;
+      --white: #f5f4f0;
+      --muted: rgba(245,244,240,0.55);
+      --border: rgba(255,255,255,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* NAV */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      transition: background 0.3s, padding 0.3s;
+      padding: 1.25rem 0;
+    }
+    header.scrolled { background: rgba(20,19,30,0.97); padding: 0.75rem 0; backdrop-filter: blur(8px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logo img { height: 2.5rem; width: 2.5rem; object-fit: contain; }
+    .nav-logo-text .brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 900; color: var(--white); letter-spacing: 0.05em; line-height: 1; }
+    .nav-logo-text .sub { font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); font-weight: 500; margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { font-size: 0.9rem; color: rgba(245,244,240,0.8); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--orange); }
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-phone { font-size: 0.875rem; color: rgba(245,244,240,0.8); display: flex; align-items: center; gap: 0.4rem; }
+    .btn-primary {
+      background: var(--orange); color: var(--white);
+      padding: 0.6rem 1.25rem; border-radius: 4px;
+      font-size: 0.875rem; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 140px; padding-bottom: 80px;
+      min-height: 55vh; display: flex; align-items: center;
+    }
+    .hero-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-label::after { content: ''; display: block; width: 2.5rem; height: 2px; background: var(--orange); }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; text-transform: uppercase;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.95; letter-spacing: -0.01em;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 .line-white { color: var(--white); display: block; }
+    .hero h1 .line-orange { color: var(--orange); display: block; }
+    .hero h1 .line-teal { color: var(--teal); display: block; }
+    .hero-sub { font-size: 1.125rem; color: var(--muted); max-width: 560px; line-height: 1.7; }
+
+    /* FAQ */
+    .faq-section { padding: 80px 0; }
+    .faq-section + .faq-section { border-top: 1px solid var(--border); }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 2rem;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--white); padding: 1.5rem 0;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; text-transform: uppercase; letter-spacing: 0.02em;
+      list-style: none; user-select: none;
+    }
+    .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--orange); flex-shrink: 0; transition: transform 0.2s; }
+    details[open] .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      color: var(--muted); padding: 0 0 1.5rem;
+      font-size: 1rem; line-height: 1.75; max-width: 780px;
+    }
+    .faq-answer strong { color: var(--white); font-weight: 600; }
+
+    /* CTA BAND */
+    .cta-band {
+      background: rgba(232,116,42,0.08);
+      border-top: 1px solid rgba(232,116,42,0.2);
+      border-bottom: 1px solid rgba(232,116,42,0.2);
+      padding: 80px 0;
+    }
+    .cta-band h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; text-transform: uppercase;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1; margin-bottom: 1rem;
+    }
+    .cta-band p { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 520px; }
+    .btn-large {
+      background: var(--orange); color: var(--white);
+      padding: 1rem 2.5rem; border-radius: 4px;
+      font-size: 1rem; font-weight: 700;
+      display: inline-block; transition: opacity 0.2s;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .btn-large:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer { background: var(--bg-footer); border-top: 1px solid var(--border); }
+    .footer-inner { padding: 4rem 0; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-brand .brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 900; letter-spacing: 0.05em; }
+    .footer-brand .sub { font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-top: 1px; }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .footer-logo img { height: 3rem; width: 3rem; object-fit: contain; }
+    .footer-tagline { color: var(--muted); font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; max-width: 320px; }
+    .footer-badge { font-size: 0.75rem; color: var(--muted); }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: var(--muted); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-col address { font-style: normal; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col address a, .footer-col address span { font-size: 0.875rem; color: var(--muted); }
+    .footer-bottom { border-top: 1px solid var(--border); padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom span { font-size: 0.8rem; color: var(--muted); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { font-size: 0.8rem; color: var(--muted); transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--white); }
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/eleven-coats-logo_d4a00c82.png" alt="Eleven Coats Painting" />
+        <div class="nav-logo-text">
+          <div class="brand">ELEVEN COATS</div>
+          <div class="sub">Painting</div>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="/services">Services</a>
+        <a href="/commercial">Commercial</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="nav-phone">📞 (602) 888-1281</span>
+        <a href="/contact" class="btn-primary">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-label">FAQ</div>
+      <h1>
+        <span class="line-white">STRAIGHT ANSWERS.</span>
+        <span class="line-orange">NO RUNAROUND.</span>
+      </h1>
+      <p class="hero-sub">Every question we get asked before a job starts — answered honestly. If it's not here, call us and we'll tell you straight.</p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-label">Pricing &amp; Estimates</div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question">How much does it cost to paint the exterior of a house in Phoenix?</summary>
+          <div class="faq-answer">
+            <p>For most single-family homes in the Phoenix metro, exterior painting runs between <strong>$3,500 and $9,000</strong>, depending on square footage, number of stories, surface condition, and color complexity. A 2,000 sq ft single-story home with good existing paint typically lands in the $4,000–$5,500 range. Two-story homes or properties needing significant prep work will run higher. Check our <a href="/pricing" style="color: var(--orange);">Pricing Guide</a> for real numbers broken out by job type.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">How much does interior painting cost?</summary>
+          <div class="faq-answer">
+            <p>Interior jobs vary a lot by scope. A single room runs <strong>$400–$900</strong>. A full home interior (1,800–2,500 sq ft) typically runs <strong>$4,000–$8,500</strong>. Factors that change the price: ceiling height, number of colors, condition of walls, amount of trim and doors, and whether furniture needs to be moved. We price by the job, not by the hour.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you give free estimates?</summary>
+          <div class="faq-answer">
+            <p>Yes. Every estimate is free, in-person, and without obligation. We walk the job, take measurements, discuss your goals, and give you a written quote — usually within 24 hours of the walkthrough. We don't do ballpark estimates over the phone because we've seen too many jobs where a "phone quote" turns into a surprise at the end.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Why are your prices different from other companies I've called?</summary>
+          <div class="faq-answer">
+            <p>A few reasons. First, we don't low-ball to get the job and add on later — our quotes are comprehensive. Second, we use commercial-grade paints (Sherwin-Williams Duration, Emerald, and similar), not builder-grade products. Third, our prep work is extensive. <strong>Most callbacks and paint failures come from poor prep, not poor paint.</strong> We sand, fill, prime, and caulk before a single finish coat goes on. You can find someone cheaper. You'll find us more honest about why.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-label">The Painting Process</div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question">How long does an exterior paint job take?</summary>
+          <div class="faq-answer">
+            <p>Most single-story exteriors take <strong>2–4 days</strong> from start to finish. Two-story homes typically run <strong>3–6 days</strong>. Large estates or jobs with significant prep (heavy stucco cracks, old peeling paint, new wood) can take longer. We give you a realistic timeline before we start — not one that sounds good but forces us to rush.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do I need to be home while you're working?</summary>
+          <div class="faq-answer">
+            <p>Not for exterior jobs. We can work independently as long as we have gate and garage access if needed. For interiors, most clients prefer to be home at least on day one to confirm color placement and any last questions. After that, many clients simply leave a key or garage code. We treat your property the same whether you're watching or not.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What kind of prep do you do before painting?</summary>
+          <div class="faq-answer">
+            <p>More than most companies. Exterior prep includes: pressure washing, scraping and sanding loose paint, filling cracks and holes (stucco, wood, and masonry), caulking all penetrations and joints, priming bare surfaces, and masking all trim, glass, and hardscape. Interior prep includes: filling holes and cracks, skim-coating damaged drywall, sanding, priming stains, and protecting floors and furniture. <strong>Prep is 60% of the job.</strong> We take it seriously.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What brands of paint do you use?</summary>
+          <div class="faq-answer">
+            <p>Primarily <strong>Sherwin-Williams</strong> — Duration, Emerald, and Superpaint depending on the application. We also work with <strong>Benjamin Moore</strong> and <strong>Dunn-Edwards</strong> based on client preference or specific project needs. We don't use builder-grade paint. The difference in adhesion, coverage, and longevity is significant in Arizona's climate. If you've already picked a color from a specific brand, we can match it.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-label">Arizona Climate &amp; Timing</div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question">When is the best time to paint the exterior of a house in Phoenix?</summary>
+          <div class="faq-answer">
+            <p>October through April is ideal. Temperatures between 50–90°F allow paint to cure properly without flashing (drying too fast before it bonds). Summer months — June through September — are workable but require us to paint early mornings and avoid surfaces in direct sun. <strong>We do not stop painting in the summer</strong>, but we adjust our schedule to protect quality. If you're planning ahead, fall and winter book faster than you'd expect. Don't wait.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">How often does a house in Phoenix need to be repainted?</summary>
+          <div class="faq-answer">
+            <p>Exterior: every <strong>7–12 years</strong> with a quality paint job. Arizona's UV intensity and heat are brutal on paint — fading, chalking, and cracking happen faster here than in cooler climates. Cheaper paints or poor application can fail in 3–5 years. Our jobs, using premium paint with proper prep, are backed by a 9-year labor and materials warranty. Interior: typically 10–15 years in normal living spaces, 3–5 years in high-traffic areas like hallways and bathrooms.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Can you paint during monsoon season?</summary>
+          <div class="faq-answer">
+            <p>Yes, with scheduling adjustments. Monsoons in Phoenix (July–September) bring afternoon thunderstorms, but mornings are usually clear. We monitor weather closely and will pause or reschedule if conditions threaten the job. We never paint wet surfaces or apply paint when rain is imminent. If a job gets interrupted by weather, we pick up the next clear morning — at no additional cost to you.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-label">Warranty &amp; After the Job</div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-question">What does your 9-year warranty cover?</summary>
+          <div class="faq-answer">
+            <p>Our warranty covers <strong>labor and materials</strong> for 9 years from the completion date. If the paint peels, cracks, blisters, or fails due to application or material defects, we come back and fix it at no charge. The warranty does not cover damage caused by impact, water intrusion from structural issues, or normal fading from UV exposure over time. It's a real warranty — we've honored it, and we intend to keep doing so.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Are you licensed and insured?</summary>
+          <div class="faq-answer">
+            <p>Yes. We are licensed with the Arizona Registrar of Contractors (<strong>ROC #360099</strong>) and carry full general liability and workers' compensation insurance. We can provide certificates of insurance on request. If a painting company can't provide a ROC number and current insurance certificates, do not hire them — regardless of price.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you do touch-ups after the job is complete?</summary>
+          <div class="faq-answer">
+            <p>Yes. We do a final walkthrough with you on the last day and address anything that doesn't meet your expectations before we close out the job. If you notice something after we've left — a missed spot, a drip, anything — call us. We come back. That's not a special service; that's just how we operate.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2><span style="color:var(--white)">STILL HAVE</span> <span style="color:var(--orange)">QUESTIONS?</span></h2>
+      <p>Call us or request an estimate. We'll walk your property, answer everything, and give you a written quote — no pressure, no games.</p>
+      <a href="/contact" class="btn-large">Get a Free Estimate</a>
+      &nbsp;&nbsp;
+      <a href="tel:6028881281" class="btn-large" style="background: transparent; border: 1px solid rgba(245,244,240,0.2); color: var(--white);">(602) 888-1281</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/eleven-coats-logo_d4a00c82.png" alt="Eleven Coats Painting" />
+          <div class="footer-brand">
+            <div class="brand">ELEVEN COATS</div>
+            <div class="sub">Painting</div>
+          </div>
+        </div>
+        <p class="footer-tagline">The right people. Whatever it takes. Serving Scottsdale, Phoenix, and the greater Valley since 1997.</p>
+        <div class="footer-badge">4.7 · 131 Reviews &nbsp;·&nbsp; 9-Year Labor &amp; Material Warranty</div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/exterior-painting">Exterior Painting</a></li>
+          <li><a href="/interior-painting">Interior Painting</a></li>
+          <li><a href="/cabinet-refinishing">Cabinet Refinishing</a></li>
+          <li><a href="/commercial">Commercial Painting</a></li>
+          <li><a href="/pricing">Pricing Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="tel:6028881281">(602) 888-1281</a>
+          <a href="mailto:jim@11coats.com">jim@11coats.com</a>
+          <span>Scottsdale &amp; Phoenix, AZ</span>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="/scottsdale-painters">Scottsdale</a></li>
+          <li><a href="/phoenix-painters">Phoenix</a></li>
+          <li><a href="/paradise-valley-painters">Paradise Valley</a></li>
+          <li><a href="/chandler-painters">Chandler</a></li>
+          <li><a href="/gilbert-painters">Gilbert</a></li>
+          <li><a href="/mesa-painters">Mesa</a></li>
+          <li><a href="/tempe-painters">Tempe</a></li>
+          <li><a href="/peoria-painters">Peoria</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Eleven Coats Painting. All rights reserved. Arizona ROC #360099.</span>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/sms-terms">SMS Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>
