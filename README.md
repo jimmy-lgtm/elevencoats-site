@@ -1,2 +1,3 @@
-# elevencoats-site
-Eleven Coats Painting website - elevencoatspainting.com
+# Eleven Coats Painting
+
+Elevencoatspainting.com - deployed via GitHub + Netlify.
