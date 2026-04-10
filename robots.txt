@@ -1,0 +1,31 @@
+# Eleven Coats Painting — robots.txt
+# Phoenix metro painting contractor — elevencoatspainting.com
+
+User-agent: *
+Allow: /
+Disallow: /assets/scratch/
+Disallow: /*.json$
+
+# AI crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://elevencoatspainting.com/sitemap.xml
