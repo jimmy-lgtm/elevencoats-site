@@ -126,29 +126,21 @@ header.scrolled{background:rgba(20,19,30,0.97);padding:0.75rem 0;backdrop-filter
 .btn-primary{background:var(--orange);color:var(--white);padding:0.6rem 1.25rem;border-radius:4px;font-size:0.875rem;font-weight:600;transition:opacity 0.2s}
 .btn-primary:hover{opacity:0.9}
 @media(max-width:900px){.nav-links,.nav-phone{display:none}}
-.hero{padding-top:140px;padding-bottom:80px;min-height:85vh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at top left, rgba(78,133,147,0.08) 0%, transparent 60%)}
-.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:4rem;align-items:center}
-.hero-copy{position:relative;z-index:2}
-.hero-image{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)}
-.hero-image img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-image::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, transparent 55%, rgba(20,19,30,0.55) 100%);z-index:1;pointer-events:none}
-.hero-image-badge{position:absolute;left:1.5rem;right:1.5rem;bottom:1.5rem;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(20,19,30,0.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1rem 1.25rem}
-.hero-image-badge .badge-left{display:flex;flex-direction:column;gap:0.15rem}
-.hero-image-badge .badge-title{font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.08em}
-.hero-image-badge .badge-sub{font-size:0.72rem;color:var(--muted);letter-spacing:0.05em}
-.hero-image-badge .badge-stars{color:var(--orange);font-size:0.9rem;letter-spacing:0.15em;white-space:nowrap}
-.hero-image-badge .badge-stars strong{color:var(--white);font-size:0.95rem;margin-left:0.35rem}
+.hero{padding-top:140px;padding-bottom:80px;min-height:80vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:0.4}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,19,30,0.95) 0%,rgba(20,19,30,0.7) 45%,rgba(20,19,30,0.35) 100%)}
+.hero .container{position:relative;z-index:1}
 .hero-label{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem}
 .hero-label::after{content:'';display:block;width:2.5rem;height:2px;background:var(--orange)}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2.75rem,6.5vw,5.5rem);line-height:0.92;letter-spacing:-0.01em;margin-bottom:1.75rem}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(3rem,9vw,7rem);line-height:0.9;letter-spacing:-0.01em;margin-bottom:1.75rem}
 .hero h1 .line-white{color:var(--white);display:block}
 .hero h1 .line-orange{color:var(--orange);display:block}
-.hero-sub{font-size:1.15rem;color:var(--muted);max-width:560px;line-height:1.7}
+.hero-sub{font-size:1.2rem;color:var(--muted);max-width:620px;line-height:1.7}
 .hero-ctas{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;align-items:center}
-.hero-trust{display:flex;gap:1.75rem;margin-top:2.5rem;flex-wrap:wrap;color:var(--muted);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase}
+.hero-trust{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;color:var(--muted);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase}
 .hero-trust span{display:flex;align-items:center;gap:0.5rem}
 .hero-trust strong{color:var(--white)}
-@media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:3rem}.hero-image{aspect-ratio:16/10;max-width:560px;margin:0 auto}.hero{min-height:auto;padding-bottom:60px}}
 .section{padding:80px 0;border-top:1px solid var(--border)}
 .section-label{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem}
 .section h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;line-height:0.95;margin-bottom:1.5rem}
@@ -258,9 +250,8 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <main>
 
 <section class="hero">
+<div class="hero-bg"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/hero-painters-work-m9Sk9ugMqSz476tFGkwNpr.webp" alt="Eleven Coats painters working on a Scottsdale luxury home"/></div>
 <div class="container">
-<div class="hero-grid">
-<div class="hero-copy">
 <div class="hero-label">Scottsdale &amp; Phoenix Painters</div>
 <h1>
 <span class="line-white">MOST PAINTERS</span>
@@ -277,18 +268,6 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <span>📣 <strong>131</strong> Reviews</span>
 <span>🛡️ <strong>9-Year</strong> Warranty</span>
 <span>🏛️ AZ ROC <strong>#360099</strong></span>
-</div>
-</div>
-<div class="hero-image">
-<img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/hero-painters-work-m9Sk9ugMqSz476tFGkwNpr.webp" alt="Eleven Coats painters working on a Scottsdale luxury home exterior"/>
-<div class="hero-image-badge">
-<div class="badge-left">
-<div class="badge-title">On the job — Scottsdale</div>
-<div class="badge-sub">Serving the Valley since 1997</div>
-</div>
-<div class="badge-stars">★★★★★<strong>4.7</strong></div>
-</div>
-</div>
 </div>
 </div>
 </section>
