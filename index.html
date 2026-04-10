@@ -127,20 +127,22 @@ header.scrolled{background:rgba(20,19,30,0.97);padding:0.75rem 0;backdrop-filter
 .btn-primary:hover{opacity:0.9}
 @media(max-width:900px){.nav-links,.nav-phone{display:none}}
 .hero{padding-top:140px;padding-bottom:80px;min-height:80vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;opacity:0.4}
-.hero-bg img{width:100%;height:100%;object-fit:cover}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,19,30,0.95) 0%,rgba(20,19,30,0.7) 45%,rgba(20,19,30,0.35) 100%)}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:0.55}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,19,30,0.96) 0%,rgba(20,19,30,0.92) 35%,rgba(20,19,30,0.55) 65%,rgba(20,19,30,0.25) 100%)}
 .hero .container{position:relative;z-index:1}
+.hero-copy{max-width:640px}
 .hero-label{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem}
 .hero-label::after{content:'';display:block;width:2.5rem;height:2px;background:var(--orange)}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(3rem,9vw,7rem);line-height:0.9;letter-spacing:-0.01em;margin-bottom:1.75rem}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2.75rem,6.5vw,5.75rem);line-height:0.92;letter-spacing:-0.01em;margin-bottom:1.75rem}
 .hero h1 .line-white{color:var(--white);display:block}
 .hero h1 .line-orange{color:var(--orange);display:block}
-.hero-sub{font-size:1.2rem;color:var(--muted);max-width:620px;line-height:1.7}
+.hero-sub{font-size:1.15rem;color:var(--muted);max-width:560px;line-height:1.7}
 .hero-ctas{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;align-items:center}
 .hero-trust{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;color:var(--muted);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase}
 .hero-trust span{display:flex;align-items:center;gap:0.5rem}
 .hero-trust strong{color:var(--white)}
+@media(max-width:768px){.hero-bg::after{background:linear-gradient(180deg,rgba(20,19,30,0.85) 0%,rgba(20,19,30,0.92) 100%)}}
 .section{padding:80px 0;border-top:1px solid var(--border)}
 .section-label{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem}
 .section h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3.75rem);text-transform:uppercase;line-height:0.95;margin-bottom:1.5rem}
@@ -252,6 +254,7 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <section class="hero">
 <div class="hero-bg"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470037636/i2CADUk2uG5HbpG494j4Rp/hero-painters-work-m9Sk9ugMqSz476tFGkwNpr.webp" alt="Eleven Coats painters working on a Scottsdale luxury home"/></div>
 <div class="container">
+<div class="hero-copy">
 <div class="hero-label">Scottsdale &amp; Phoenix Painters</div>
 <h1>
 <span class="line-white">MOST PAINTERS</span>
@@ -268,6 +271,7 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <span>📣 <strong>131</strong> Reviews</span>
 <span>🛡️ <strong>9-Year</strong> Warranty</span>
 <span>🏛️ AZ ROC <strong>#360099</strong></span>
+</div>
 </div>
 </div>
 </section>
