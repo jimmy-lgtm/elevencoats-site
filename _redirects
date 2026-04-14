@@ -4,6 +4,12 @@
 https://11coatspainting.com/*        https://elevencoatspainting.com/:splat  301!
 https://www.11coatspainting.com/*    https://elevencoatspainting.com/:splat  301!
 
+# Retire primepaintingphoenix.com — preserve SEO equity via page-level 301s
+https://primepaintingphoenix.com/*       https://elevencoatspainting.com/:splat  301!
+https://www.primepaintingphoenix.com/*   https://elevencoatspainting.com/:splat  301!
+http://primepaintingphoenix.com/*        https://elevencoatspainting.com/:splat  301!
+http://www.primepaintingphoenix.com/*    https://elevencoatspainting.com/:splat  301!
+
 # Force non-www on elevencoatspainting.com
 https://www.elevencoatspainting.com/* https://elevencoatspainting.com/:splat 301!
 
