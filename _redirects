@@ -5,6 +5,59 @@ https://11coatspainting.com/*        https://elevencoatspainting.com/:splat  301
 https://www.11coatspainting.com/*    https://elevencoatspainting.com/:splat  301!
 
 # Retire primepaintingphoenix.com — preserve SEO equity via page-level 301s
+# NOTE: specific rules MUST come before the catch-all splat at the bottom
+
+# Page slug remaps (Prime slug → Eleven Coats equivalent)
+https://primepaintingphoenix.com/about-us                      https://elevencoatspainting.com/about                301!
+https://primepaintingphoenix.com/contact-us                    https://elevencoatspainting.com/contact              301!
+https://primepaintingphoenix.com/client-testimonials           https://elevencoatspainting.com/#reviews             301!
+https://primepaintingphoenix.com/photo-gallery                 https://elevencoatspainting.com/projects             301!
+https://primepaintingphoenix.com/recent-projects               https://elevencoatspainting.com/projects             301!
+https://primepaintingphoenix.com/faq-items                     https://elevencoatspainting.com/faq                  301!
+https://primepaintingphoenix.com/schedule-consultation         https://elevencoatspainting.com/contact              301!
+
+# Interior services → /interior-painting
+https://primepaintingphoenix.com/interior                      https://elevencoatspainting.com/interior-painting    301!
+https://primepaintingphoenix.com/interior-house-painting       https://elevencoatspainting.com/interior-painting    301!
+https://primepaintingphoenix.com/kitchen-painting              https://elevencoatspainting.com/interior-painting    301!
+https://primepaintingphoenix.com/bathroom-painting             https://elevencoatspainting.com/interior-painting    301!
+https://primepaintingphoenix.com/bedroom-painting              https://elevencoatspainting.com/interior-painting    301!
+https://primepaintingphoenix.com/dining-room-painting          https://elevencoatspainting.com/interior-painting    301!
+
+# Exterior services → /exterior-painting
+https://primepaintingphoenix.com/exterior                      https://elevencoatspainting.com/exterior-painting    301!
+https://primepaintingphoenix.com/exterior-house-painting       https://elevencoatspainting.com/exterior-painting    301!
+
+# Cabinet services → /cabinet-refinishing
+https://primepaintingphoenix.com/cabinet-painting              https://elevencoatspainting.com/cabinet-refinishing  301!
+https://primepaintingphoenix.com/cabinet-painting-phoenix      https://elevencoatspainting.com/cabinet-refinishing  301!
+
+# Commercial / HOA / office → /commercial
+https://primepaintingphoenix.com/commercial-painting           https://elevencoatspainting.com/commercial           301!
+https://primepaintingphoenix.com/commercial-painting-phoenix   https://elevencoatspainting.com/commercial           301!
+https://primepaintingphoenix.com/hoa-community-painting        https://elevencoatspainting.com/commercial           301!
+https://primepaintingphoenix.com/office-painting               https://elevencoatspainting.com/commercial           301!
+https://primepaintingphoenix.com/apartment-painters-phoenix    https://elevencoatspainting.com/commercial           301!
+https://primepaintingphoenix.com/phoenix-commercial-painters   https://elevencoatspainting.com/commercial           301!
+
+# Generic Phoenix painter pages → /phoenix-painters
+https://primepaintingphoenix.com/house-painters-phoenix        https://elevencoatspainting.com/phoenix-painters     301!
+https://primepaintingphoenix.com/interior-painters-phoenix     https://elevencoatspainting.com/phoenix-painters     301!
+https://primepaintingphoenix.com/exterior-painters-phoenix     https://elevencoatspainting.com/phoenix-painters     301!
+https://primepaintingphoenix.com/ahwatukee                     https://elevencoatspainting.com/phoenix-painters     301!
+https://primepaintingphoenix.com/phoenix-painting-services     https://elevencoatspainting.com/services             301!
+
+# Pricing pages → /pricing
+https://primepaintingphoenix.com/interior-painting-pricing     https://elevencoatspainting.com/pricing              301!
+https://primepaintingphoenix.com/exterior-painting-pricing     https://elevencoatspainting.com/pricing              301!
+https://primepaintingphoenix.com/cabinet-painting-pricing      https://elevencoatspainting.com/pricing              301!
+
+# Prime WordPress blog posts → /blog (dated + common flat-slug patterns)
+https://primepaintingphoenix.com/20*                           https://elevencoatspainting.com/blog                 301!
+https://primepaintingphoenix.com/*-phoenix-az                  https://elevencoatspainting.com/blog                 301!
+https://primepaintingphoenix.com/*-peoria-az                   https://elevencoatspainting.com/blog                 301!
+
+# Catch-all splat — everything else on Prime → matching path on Eleven Coats
 https://primepaintingphoenix.com/*       https://elevencoatspainting.com/:splat  301!
 https://www.primepaintingphoenix.com/*   https://elevencoatspainting.com/:splat  301!
 http://primepaintingphoenix.com/*        https://elevencoatspainting.com/:splat  301!
