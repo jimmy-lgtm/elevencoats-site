@@ -99,3 +99,8 @@ https://www.elevencoatspainting.com/* https://elevencoatspainting.com/:splat 301
 /sun-lakes         /sun-lakes-painters        301
 /cave-creek        /cave-creek-painters       301
 /fountain-hills    /fountain-hills-painters   301
+
+# Legacy 11coats slug remaps - correct Eleven Coats pages
+/prime-painting-your-trusted-interior-and-exterior-painters-in-glendale-az/  /glendale-painters/  301
+/professional-interior-exterior-painters-tempe-az/                            /tempe-painters/     301
+/recent-projects/exterior-and-interior-house-painting-in-scottsdale-arizona/  /projects/           301
