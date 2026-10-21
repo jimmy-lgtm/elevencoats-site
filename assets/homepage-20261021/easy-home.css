@@ -1,0 +1,40 @@
+/* Separate comparison: a warmer display face, simpler message, and a house-first crop. */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url('./manrope-latin-600.woff2') format('woff2')}
+:root{--display:'Manrope','Inter',Arial,sans-serif}
+#hero-title,.section-heading h2,.services h2{font-family:var(--display);font-weight:600;font-optical-sizing:auto;font-synthesis:none}
+.h1-intro,.h1-emotion{font-family:inherit;font-weight:600}
+.h1-intro{font-size:30px;line-height:1.2;letter-spacing:-.6px}
+.h1-emotion{font-size:60px;line-height:1.02;letter-spacing:-1.5px;margin-top:5px;text-wrap:initial}
+.hero-welcome{margin-top:16px}
+.hero-area{font-family:var(--sans);font-size:12px;line-height:1.55;max-width:430px;margin-top:9px;color:#39434a;text-wrap:pretty}
+.hero-proof{margin-top:20px}
+.hero-backdrop img{width:110%;max-width:none;object-position:left 54%}
+@media(min-width:1700px){
+ .h1-intro{font-size:32px}
+ .h1-emotion{font-size:66px}
+ .hero-area{font-size:13px;max-width:470px}
+ .hero-backdrop img{object-position:left 50%}
+}
+@media(min-width:901px) and (max-width:1100px){
+ .h1-intro{font-size:28px}
+ .h1-emotion{font-size:52px}
+ .hero-backdrop img{object-position:left 57%}
+}
+@media(max-width:900px){
+ .h1-intro{font-size:32px}
+ .h1-emotion{font-size:64px}
+ .hero-area{font-size:13px;max-width:500px}
+ .hero-backdrop img{width:100%;height:650px;object-position:36% 58%}
+}
+@media(max-width:600px){
+ .h1-intro{font-size:28px}
+ .h1-emotion{font-size:52px;line-height:1.06;letter-spacing:-1.2px;max-width:100%}
+ .hero-area{font-size:12px;line-height:1.6;max-width:350px;margin-top:9px}
+ .hero-proof{margin-top:23px}
+ .hero-backdrop img{object-position:35% 58%}
+}
+@media(max-width:359px){
+ .h1-intro{font-size:25px}
+ .h1-emotion{font-size:46px;letter-spacing:-.9px}
+ .hero-backdrop img{object-position:38% 58%;bottom:-18px}
+}

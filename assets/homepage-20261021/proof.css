@@ -1,0 +1,35 @@
+.customer-proof{padding-block:28px 38px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.customer-proof h2{font-family:var(--sans);font-weight:500;font-size:12px;line-height:1.5;letter-spacing:.6px;color:var(--soft);margin-bottom:22px}
+.review-excerpts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px}
+.review-excerpts figure{min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+.review-excerpts blockquote{margin:0;font-family:var(--serif);font-size:27px;line-height:1.23;letter-spacing:0;color:var(--light);max-width:350px}
+.review-excerpts figcaption{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 14px;margin-top:17px;font-size:12px;color:var(--soft);line-height:1.6}
+.review-excerpts figcaption a{font-size:11px;color:#e6c3a9;text-decoration:underline;text-underline-offset:4px;padding-block:5px}
+.review-excerpts a:hover{color:var(--light)}
+@media(min-width:1700px){.review-excerpts{gap:62px}.review-excerpts blockquote{font-size:29px;max-width:390px}}
+@media(max-width:1100px) and (min-width:701px){.review-excerpts{gap:26px}.review-excerpts blockquote{font-size:24px}}
+@media(max-width:700px){.customer-proof{padding-block:29px 34px}.customer-proof h2{margin-bottom:24px}.review-excerpts{grid-template-columns:1fr;gap:27px}.review-excerpts blockquote{font-size:27px;max-width:420px}.review-excerpts figcaption{margin-top:9px;font-size:12px}.review-excerpts figcaption a{font-size:12px}.review-excerpts figure+figure{padding-top:24px;border-top:1px solid #343c46}}
+@media(prefers-reduced-motion:reduce){.customer-proof{scroll-behavior:auto}}
+
+/* Keep testimonials in normal flow: short viewports scroll instead of overlapping. */
+@media(min-width:901px){
+ .site-header{height:84px}
+ .home-hero,.hero-grid{min-height:0}
+ .hero-grid{align-items:flex-start}
+ .hero-copy{padding-block:14px 16px}
+ .hero-image{bottom:0}
+ .hero-image:after{background:linear-gradient(90deg,var(--navy) 0%,#171c2440 25%,#171c2400 53%),linear-gradient(0deg,var(--navy) 0%,var(--navy) 15%,#171c2400 43%)}
+ .hero-quote{margin-top:22px}
+ .hero-proof{margin-top:20px}
+ .customer-proof{position:relative;padding-block:12px 18px;background:var(--navy)}
+ .customer-proof h2{margin-bottom:10px}
+ .review-excerpts figcaption{margin-top:10px}
+}
+@media(max-width:900px){
+ .customer-proof{order:2}
+ .review-excerpts{grid-template-columns:1fr}
+ .review-excerpts figure:not(:first-child){display:none}
+ .review-excerpts blockquote{font-size:27px;max-width:420px}
+ .review-excerpts figcaption{margin-top:9px;font-size:12px}
+ .review-excerpts figcaption a{font-size:12px}
+}

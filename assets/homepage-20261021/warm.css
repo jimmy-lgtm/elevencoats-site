@@ -1,0 +1,118 @@
+/* Option B: warm surfaces, the original brand palette, and real project photography. */
+:root{--paper:#f7f3eb;--light:#171c24;--soft:#515b61;--line:#d5ccbf;color-scheme:light}
+body{background:var(--paper);color:var(--navy)}
+.site-header{background:var(--paper);height:88px}
+.desktop-nav a:hover,.footer-main a:hover,.text-link:hover,.service-links a:hover{color:var(--button)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline-color:var(--button)}
+.skip-link{background:var(--navy);color:#fff}
+.home-hero{display:block;overflow:visible;min-height:0}
+.hero-main{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:64px;align-items:stretch;padding-top:15px}
+.hero-grid{display:block;min-height:0;order:0}
+.hero-copy{width:100%;padding:0 0 24px;max-width:none}
+h1{letter-spacing:-1px}
+.h1-intro{font-family:var(--sans);font-size:27px;font-weight:500;line-height:1.25;letter-spacing:-.6px;max-width:none;text-wrap:balance}
+.h1-emotion{font-size:72px;line-height:1.02;margin-top:8px;max-width:none}
+.h1-emotion em{color:var(--button)}
+.hero-welcome{font-size:16px;line-height:1.55;max-width:420px;color:var(--soft);margin-top:17px;text-wrap:pretty}
+.hero-image{position:relative;inset:auto;z-index:auto;width:100%;height:auto;order:1;display:flex;flex-direction:column;min-width:0;overflow:visible;margin:0;padding-bottom:24px}
+.hero-image img{height:0;min-height:460px;flex:1;width:100%;object-fit:cover;object-position:center 62%;border-radius:8px}
+.hero-image:after{display:none}
+.hero-image figcaption{font-size:11px;line-height:1.5;color:var(--soft);margin-top:10px}
+.hero-proof{margin-top:21px;gap:18px;max-width:435px}
+.hero-proof .bbb-link{border:1px solid var(--line);padding:5px;border-radius:4px}
+.google-proof{background:#fffdf9;border-color:#bab5ac;border-radius:6px}
+.google-proof strong,.google-proof .google-rating{color:var(--navy)}
+.google-proof .review-stars{color:#94600a}
+.google-proof .google-read{color:#8b3b16}
+.google-proof:hover{background:#fff;border-color:#8b7461}
+.hero-quote{margin-top:23px;max-width:435px}
+.hero-quote h2{font-family:var(--sans);font-size:24px;font-weight:500;line-height:1.25;letter-spacing:-.5px;margin-bottom:17px}
+.inline-quote-form .quote-field label{color:var(--navy)}
+.inline-quote-form .quote-field label span{color:var(--soft)}
+.inline-quote-form .quote-field input{background:#fffdf9;border-color:#87857f;border-radius:5px;box-shadow:none}
+.inline-quote-form .quote-field input:focus-visible{outline-color:var(--button)}
+.button{border-radius:5px}
+.quote-privacy{font-size:11px;line-height:1.55;color:var(--soft)}
+.schedule-option{font-size:13px;color:var(--soft)}
+.schedule-option :is(button,.schedule-link){color:var(--button);text-decoration-color:var(--button)}
+.schedule-option :is(button,.schedule-link):hover{color:#733010}
+.quote-error-summary,.field-error{color:#923916}
+.inline-quote-form input[aria-invalid=true]{border-color:#923916}
+.inline-quote-form .quote-status{background:#e8efe6;border-color:#70856c;color:#203a2c}
+.quote-status:focus{outline-color:var(--button)}
+.customer-proof{position:relative;background:transparent;padding-block:18px 24px;border-color:var(--line)}
+.customer-proof h2{color:var(--soft);letter-spacing:.3px;margin-bottom:16px}
+.review-excerpts{gap:42px}
+.review-excerpts blockquote{color:var(--navy);font-size:27px;line-height:1.2}
+.review-excerpts figcaption{margin-top:12px;color:var(--soft)}
+.review-excerpts figcaption a{color:#8b3b16}
+.review-excerpts a:hover{color:var(--navy)}
+.work-photos img{border-radius:7px}
+.section-heading h2 em,.services h2 em{color:var(--button)}
+.services{border-color:var(--line)}
+.mobile-nav nav{background:#fffdf9;color:var(--navy);border-color:var(--line);border-radius:5px;box-shadow:0 12px 28px #171c2414}
+.booking-dialog{background:var(--paper);color:var(--navy)}
+.booking-dialog .eyebrow{color:#425e66}
+.booking-close{background:#e8e1d7;color:var(--navy)}
+@media(min-width:901px){
+ .hero-copy{padding-bottom:20px}
+ .hero-welcome{max-width:none}
+ .hero-image{height:100%;display:block;min-height:0;padding-bottom:0}
+ .hero-image img{position:absolute;inset:0 0 48px;height:calc(100% - 48px);min-height:0}
+ .hero-image figcaption{position:absolute;bottom:24px;left:0;margin:0}
+ .customer-proof{padding-block:14px 18px}
+ .customer-proof h2{margin-bottom:12px}
+ .review-excerpts figcaption{margin-top:10px}
+}
+@media(min-width:1700px){
+ .hero-main{gap:86px;padding-top:22px}
+ .h1-intro{font-size:30px}
+ .h1-emotion{font-size:82px}
+ .hero-welcome{font-size:17px}
+ .hero-quote{max-width:460px}
+ .review-excerpts blockquote{font-size:29px}
+}
+@media(min-width:901px) and (max-width:1100px){
+ .hero-main{gap:36px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .h1-intro{font-size:24px}
+ .h1-emotion{font-size:59px}
+ .hero-welcome{font-size:15px}
+ .hero-quote{max-width:400px}
+ .review-excerpts{gap:26px}
+ .review-excerpts blockquote{font-size:24px}
+}
+@media(max-width:900px){
+ .site-header{height:78px}
+ .hero-main{display:flex;flex-direction:column;gap:0;padding-top:20px}
+ .hero-copy{padding:0 0 30px;max-width:620px}
+ .h1-intro{font-size:27px;max-width:100%;text-wrap:initial}
+ .h1-emotion{font-size:72px;max-width:620px}
+ .hero-quote{max-width:500px}
+ .hero-image{height:auto;padding-bottom:22px}
+ .hero-image img{height:430px;min-height:0;flex:none;object-position:center 58%}
+ .customer-proof{padding-block:25px 30px}
+ .review-excerpts{grid-template-columns:1fr}
+ .review-excerpts figure:not(:first-child){display:none}
+ .review-excerpts blockquote{font-size:27px}
+ .review-excerpts figcaption a{font-size:12px}
+}
+@media(max-width:600px){
+ .site-header{height:72px}
+ .hero-main{padding-top:18px}
+ .h1-intro{font-size:24px;line-height:1.3;max-width:340px;letter-spacing:-.55px}
+ .h1-emotion{font-size:61px;line-height:.99;margin-top:9px;max-width:350px}
+ .hero-welcome{font-size:15px;line-height:1.6;max-width:330px;margin-top:19px}
+ .hero-proof{margin-top:24px;gap:12px}
+ .hero-quote{margin-top:28px}
+ .hero-quote h2{font-size:25px;margin-bottom:21px}
+ .hero-image img{height:355px;object-position:center 58%;border-radius:6px}
+ .hero-image figcaption{font-size:11px;margin-top:9px}
+ .quote-privacy{max-width:310px}
+ .customer-proof h2{margin-bottom:18px}
+}
+@media(max-width:359px){
+ .h1-intro{font-size:22px}
+ .h1-emotion{font-size:54px}
+ .hero-welcome{font-size:14px}
+ .hero-image img{height:320px}
+}

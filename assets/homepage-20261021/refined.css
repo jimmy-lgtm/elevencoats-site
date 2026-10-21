@@ -1,0 +1,14 @@
+/* Shift the existing crop toward the house; no extra enlargement. */
+@media(min-width:901px){
+ .hero-backdrop img{position:absolute;top:0;left:6%;height:100%;width:110%;mask-image:linear-gradient(90deg,transparent,#000 12%)}
+ .hero-backdrop:after{background:linear-gradient(90deg,rgba(247,243,235,.92) 0%,rgba(247,243,235,.88) 30%,rgba(247,243,235,.86) 40%,rgba(247,243,235,.08) 57%,rgba(247,243,235,0) 63%)}
+}
+@media(min-width:901px) and (max-width:1250px){
+ .hero-backdrop:after{background:linear-gradient(90deg,rgba(247,243,235,.92) 0%,rgba(247,243,235,.9) 32%,rgba(247,243,235,.87) 49%,rgba(247,243,235,.08) 61%,rgba(247,243,235,0) 66%)}
+}
+@media(max-width:600px){
+ .hero-backdrop img{object-position:25% 58%}
+}
+@media(max-width:359px){
+ .hero-backdrop img{object-position:38% 58%}
+}

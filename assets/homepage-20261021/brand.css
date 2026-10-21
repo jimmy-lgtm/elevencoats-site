@@ -1,0 +1,57 @@
+/* Brand-only adaptation of the approved easy-refined layout. */
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url('./barlow-condensed-latin-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:900;font-display:swap;src:url('./barlow-condensed-latin-900.woff2') format('woff2')}
+:root{--paper:#14131e;--navy:#f5f4f0;--ink:#f5f4f0;--light:#f5f4f0;--sand:#1c1b28;--soft:#c6c3cf;--line:#555260;--button:#e8742a;--slate:#4e8593;--display:'Barlow Condensed','Arial Narrow',Arial,sans-serif;color-scheme:dark}
+body{background:var(--paper);color:var(--light);-webkit-font-smoothing:antialiased}
+.site-header{background:#14131e}
+#hero-title,.section-heading h2,.services h2,#quote-title,.booking-dialog h2{font-family:var(--display);font-weight:900;font-style:normal;font-synthesis:none;text-transform:uppercase}
+#hero-title .h1-intro,#hero-title .h1-emotion{font-family:inherit;font-weight:900}
+#hero-title .h1-emotion{color:var(--button)}
+.section-heading h2 em,.services h2 em{font-family:inherit;font-style:normal;font-weight:900;color:var(--button)}
+.hero-welcome,.hero-area,.quote-privacy,.schedule-option{color:#d2ceda}
+.hero-backdrop:after{background:linear-gradient(90deg,rgba(20,19,30,.98) 0%,rgba(20,19,30,.94) 30%,rgba(20,19,30,.9) 40%,rgba(20,19,30,.08) 57%,rgba(20,19,30,0) 63%)}
+.hero-proof .bbb-link{background:#fffdf9;color:#171c24;border-color:#8d8995}
+.google-proof{background:#242330;border-color:#777181;border-radius:4px}
+.google-proof strong,.google-proof .google-rating{color:var(--light)}
+.google-proof .review-stars{color:#f5bd72}
+.google-proof .google-read,.review-excerpts figcaption a,.schedule-option :is(button,.schedule-link),.text-link{color:var(--button);text-decoration-color:currentColor}
+.google-proof:hover{background:#2e2c3c;border-color:#b0a8ba}
+.schedule-option :is(button,.schedule-link):hover,.review-excerpts a:hover,.text-link:hover{color:#ffb784}
+.inline-quote-form .quote-field label{color:var(--light)}
+.inline-quote-form .quote-field label span{color:var(--soft)}
+.inline-quote-form .quote-field input{background:#242330;color:var(--light);border-color:#94909f;border-radius:4px}
+.inline-quote-form .quote-field input::placeholder{color:#c6c3cf}
+.button,.quote-submit{background:var(--button);border-color:var(--button);border-radius:4px;color:#14131e;font-weight:700}
+.quote-submit{text-transform:uppercase;letter-spacing:.05em}
+.button:hover,.quote-submit:hover{background:#f18a48;border-color:#f18a48;color:#14131e}
+.customer-proof{background:rgba(28,27,40,.97);border-color:#686172}
+.customer-proof h2,.review-excerpts figcaption{color:#c6c3cf}
+.review-excerpts blockquote{color:var(--light)}
+.services,.service-links a,.footer-bottom{border-color:#555260}
+.service-links a{color:var(--light)}
+.work-bottom,.work-photos figcaption,.section-heading>p,.services p{color:#c6c3cf}
+.mobile-nav nav{background:#242330;color:var(--light);border-color:#777181;box-shadow:0 12px 28px #0006}
+.quote-error-summary,.field-error{color:#ffbc9b}
+.inline-quote-form input[aria-invalid=true]{border-color:#ffbc9b}
+.inline-quote-form .quote-status{background:#183c2e;border-color:#85b79b;color:#e1f7e8}
+.booking-dialog{background:#1c1b28;color:var(--light);border-color:#777181}
+.booking-dialog .eyebrow{color:#9ac6d1}
+.booking-close{background:#353243;color:var(--light)}
+.skip-link{background:var(--button);color:#14131e}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline-color:#ffb784}
+footer.wrap{background:#0f0e18;box-shadow:0 0 0 100vmax #0f0e18;clip-path:inset(0 -100vmax)}
+.footer-main,.footer-bottom{color:#c6c3cf}
+.footer-main .footer-phone{color:var(--light)}
+.desktop-nav a:hover,.footer-main a:hover,.footer-bottom a:hover,.service-links a:hover{color:var(--button)}
+@media(min-width:901px) and (max-width:1250px){
+ .hero-backdrop:after{background:linear-gradient(90deg,rgba(20,19,30,.98) 0%,rgba(20,19,30,.96) 32%,rgba(20,19,30,.93) 49%,rgba(20,19,30,.08) 61%,rgba(20,19,30,0) 66%)}
+}
+@media(max-width:900px){
+ .hero-copy{background:rgba(20,19,30,.98)}
+ .hero-backdrop:after{background:linear-gradient(180deg,#14131e 0%,rgba(20,19,30,0) 65%)}
+ .customer-proof{background:rgba(28,27,40,.98)}
+}
+/* Retain the approved three-line heading footprint at the narrowest width. */
+@media(max-width:323px){#work-title{min-height:3lh}}
+
+.schedule-link{display:inline-block;background:none;border:0;font:inherit;line-height:inherit;cursor:pointer}
