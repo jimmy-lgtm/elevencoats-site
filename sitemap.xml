@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://elevencoatspainting.com/projects/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://elevencoatspainting.com/scottsdale-painters/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://elevencoatspainting.com/paradise-valley-painters/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -221,5 +221,35 @@
     <lastmod>2026-04-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://elevencoatspainting.com/scottsdale-cabinet-painting/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elevencoatspainting.com/projects/scottsdale-stained-kitchen-cabinets-painted-white/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elevencoatspainting.com/projects/scottsdale-modern-slab-cabinets-painted-white/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elevencoatspainting.com/projects/paradise-valley-interior-doors-built-ins-painted-black/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elevencoatspainting.com/projects/scottsdale-kitchen-cabinets-and-interior-repaint/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
