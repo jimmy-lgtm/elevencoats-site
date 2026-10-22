@@ -40,3 +40,42 @@
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fill);else fill();
 })();
+
+/* WE-012: on submit, send the lead to /.netlify/functions/lead (-> Zapier), wait at most 1.5 s,
+   then let the native FormSubmit POST proceed no matter what. Never blocks the email path. */
+(function(){
+  var ENDPOINT='/.netlify/functions/lead', MAX_WAIT=1500;
+  function val(f,n){var el=f.querySelector('[name="'+n+'"]');return el?String(el.value||''):''}
+  function payload(f){
+    var src=window.ecLeadSource||{};
+    return {name:val(f,'name'),email:val(f,'email'),phone:val(f,'phone'),address:val(f,'address'),
+      message:val(f,'message'),_honey:val(f,'_honey'),
+      lead_source:val(f,'lead_source')||src.lead_source||'',utm_source:val(f,'utm_source')||src.utm_source||'',
+      utm_medium:val(f,'utm_medium')||src.utm_medium||'',utm_campaign:val(f,'utm_campaign')||src.utm_campaign||'',
+      gclid:val(f,'gclid')||src.gclid||'',referrer:val(f,'referrer')||src.referrer||'',page:location.href};
+  }
+  function send(data){
+    var body=JSON.stringify(data);
+    try{
+      if(window.fetch){
+        return fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true,credentials:'omit'}).catch(function(){});
+      }
+      if(navigator.sendBeacon){navigator.sendBeacon(ENDPOINT,new Blob([body],{type:'application/json'}))}
+    }catch(e){}
+    return Promise.resolve();
+  }
+  // window-level bubbling listener: runs after the form's own validation handlers (home.js)
+  window.addEventListener('submit',function(e){
+    var f=e.target;
+    if(!f||!f.matches||!f.matches('form[action*="formsubmit.co"]'))return;
+    if(e.defaultPrevented||f.__ecSent)return;          // invalid (validation stopped it) or already sent
+    var data=payload(f);
+    if(data._honey)return;                              // honeypot: skip hook, native submit continues
+    f.__ecSent=true;
+    e.preventDefault();
+    var done=false;
+    function go(){if(done)return;done=true;try{HTMLFormElement.prototype.submit.call(f)}catch(err){f.submit()}}
+    setTimeout(go,MAX_WAIT);
+    try{send(data).then(go,go)}catch(err){go()}
+  },false);
+})();

@@ -1,5 +1,8 @@
 # Eleven Coats Painting — Netlify _redirects
 
+# WE-012: never serve function source as a static file
+/netlify/*  /404.html  404!
+
 # WE-007: renamed assets (neutral names)
 /assets/homepage-20261021/optimized/carolyn-after.webp  /assets/homepage-20261021/optimized/two-story-tan-stucco-home-after.webp  301!
 /assets/homepage-20261021/optimized/jonell-courtyard.webp  /assets/homepage-20261021/optimized/stucco-home-courtyard-patio.webp  301!
