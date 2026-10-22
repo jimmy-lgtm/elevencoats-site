@@ -1,5 +1,24 @@
 # Eleven Coats Painting — Netlify _redirects
 
+# WE-007: renamed assets (neutral names)
+/assets/homepage-20261021/optimized/carolyn-after.webp  /assets/homepage-20261021/optimized/two-story-tan-stucco-home-after.webp  301!
+/assets/homepage-20261021/optimized/jonell-courtyard.webp  /assets/homepage-20261021/optimized/stucco-home-courtyard-patio.webp  301!
+/assets/homepage-20261021/optimized/jonell-front-mobile.webp  /assets/homepage-20261021/optimized/stucco-home-front-mobile.webp  301!
+/assets/homepage-20261021/optimized/jonell-front.webp  /assets/homepage-20261021/optimized/stucco-home-front.webp  301!
+/assets/homepage-20261021/optimized/jonell-window-before.webp  /assets/homepage-20261021/optimized/stucco-arched-window-before.webp  301!
+/assets/homepage-20261021/optimized/lara-after.webp  /assets/homepage-20261021/optimized/ranch-home-stone-accent-after.webp  301!
+/assets/photos/erica-after.jpg  /assets/photos/office-built-ins-after.jpg  301!
+/assets/photos/erica-before.jpg  /assets/photos/office-built-ins-before.jpg  301!
+/assets/photos/heather-after.jpg  /assets/photos/two-story-home-exterior-after.jpg  301!
+/assets/photos/heather-before.jpg  /assets/photos/two-story-home-exterior-before.jpg  301!
+/assets/photos/jonell-after.jpg  /assets/photos/stucco-courtyard-exterior-after.jpg  301!
+/assets/photos/jonell-before.jpg  /assets/photos/stucco-courtyard-exterior-before.jpg  301!
+/assets/photos/lara-after.jpg  /assets/photos/ranch-home-exterior-after.jpg  301!
+/assets/photos/lara-before.jpg  /assets/photos/ranch-home-exterior-before.jpg  301!
+/assets/photos/lisa-after.jpg  /assets/photos/apartment-building-exterior-after.jpg  301!
+/assets/photos/lisa-before.jpg  /assets/photos/apartment-building-exterior-before.jpg  301!
+
+
 # Force apex domain from 11coatspainting.com
 https://11coatspainting.com/*        https://elevencoatspainting.com/:splat  301!
 https://www.11coatspainting.com/*    https://elevencoatspainting.com/:splat  301!
