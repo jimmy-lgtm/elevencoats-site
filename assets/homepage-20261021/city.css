@@ -43,3 +43,4 @@
 .city-hero .hero-grid{min-height:0}
 .city-hero .hero-copy{padding-top:4px}.city-hero .hero-main{padding-top:0!important;margin-top:0!important}.city-hero .hero-grid{padding-top:0!important}
 }
+.area-links strong{color:var(--light);width:100%;font-weight:600}
