@@ -1,0 +1,27 @@
+/* City landing pages: extends homepage components (WE-010) */
+.city-hero .hero-backdrop img{object-position:center 45%}
+.city-hero .h1-emotion{font-size:clamp(40px,4.2vw,68px)}
+@media(max-width:600px){.city-hero .h1-emotion{font-size:40px}.city-hero .hero-area{font-size:13px}}
+.city-hero .hero-actions{flex-wrap:wrap;max-width:470px}
+.trust-strip{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font-size:13px;color:var(--soft);list-style:none;padding:0}
+.trust-strip li{display:flex;align-items:center;gap:8px}
+.trust-strip li{border:1px solid var(--line);border-radius:3px;padding:6px 10px}
+.trust-strip a{color:var(--light);text-decoration:underline;text-underline-offset:4px;text-decoration-color:#ad794e}
+.city-copy{max-width:780px}
+.city-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.4vw,44px);line-height:1.1;margin:46px 0 16px;color:var(--light)}
+.city-copy h1{display:none}
+.city-copy p,.city-copy li{color:#dfe2e5;font-size:16px;line-height:1.7}
+.city-copy p{margin-bottom:16px}.city-copy ul{margin:0 0 18px 20px}.city-copy li{margin-bottom:6px}
+.city-copy a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#ad794e}
+.city-copy a:hover{color:#edb085}
+.cta-band{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0;margin:46px 0}
+.cta-band p{font-family:var(--serif);font-size:clamp(26px,2.6vw,34px);line-height:1.15;color:var(--light)}
+.cta-band .hero-actions{margin-top:0}
+.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.ba-grid img{width:100%;height:380px;object-fit:cover;display:block}
+.ba-grid figcaption{font-size:12px;color:var(--soft);margin-top:10px}
+.case-links{display:grid;gap:0;margin-top:10px}
+.case-links a{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+.case-links a:after{content:"→";color:#ad794e}
+.area-links{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;padding:22px 0 0;color:var(--soft)}
+@media(max-width:600px){.cta-band{display:block}.cta-band p{margin-bottom:18px}.ba-grid{grid-template-columns:1fr 1fr;gap:12px}.ba-grid img{height:220px}.trust-strip{font-size:12px;gap:8px 14px}.city-copy p,.city-copy li{font-size:15px}}
