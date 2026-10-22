@@ -3,7 +3,7 @@
   const quoteForm = document.querySelector('.inline-quote-form');
   const context = {source_page: location.pathname};
   const params = new URLSearchParams(location.search);
-  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(key => {
+  ['utm_content','utm_term'] /* utm_source/medium/campaign come from lead-source.js */.forEach(key => {
     if (params.has(key)) context[key] = params.get(key).slice(0,200);
   });
   Object.entries(context).forEach(([name,value]) => {
