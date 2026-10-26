@@ -24,6 +24,7 @@ export function buildPayload(d) {
     utm_campaign: clip(d.utm_campaign, 200),
     gclid: clip(d.gclid, 300),
     referrer: clip(d.referrer, 500),
+    landing_page: clip(d.landing_page, 500),
     page: clip(d.page, 500),
   };
 }

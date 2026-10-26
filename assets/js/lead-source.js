@@ -1,7 +1,8 @@
-/* WE-011 lead source capture. First touch per browser session, stored in sessionStorage
-   and copied into hidden fields on every formsubmit.co form. No cookies, no network calls. */
+/* WE-011/WE-016 lead source capture. First attributed touch is kept in sessionStorage and in
+   localStorage for 30 days, then copied into hidden fields on every formsubmit.co form and appended
+   to booking-widget links. No cookies, no network calls. */
 (function(){
-  var KEY='ec_lead_src_v1';
+  var KEY='ec_lead_src_v1', LKEY='ec_lead_src_v2', TTL=30*24*3600*1000;
   var AI=['chatgpt.com','chat.openai.com','perplexity.ai','gemini.google.com','copilot.microsoft.com','claude.ai'];
   var MAPS_SRC=['gbp','google-maps','google_maps','googlemaps','gmb','maps'];
   function host(u){try{return new URL(u).hostname.toLowerCase().replace(/^www\./,'')}catch(e){return ''}}
@@ -15,19 +16,25 @@
     if(inList(rh,AI)||inList(s.replace(/^www\./,''),AI)||['chatgpt','perplexity','gemini','copilot','claude'].indexOf(s)>-1) return 'AI search';
     return 'Website';
   }
+  function signal(d){return !!(d&&(d.utm_source||d.utm_medium||d.utm_campaign||d.gclid||d.referrer))}
   function current(){
     var q=new URLSearchParams(location.search), ref=document.referrer||'';
     if(host(ref)===location.hostname.replace(/^www\./,'')) ref='';
-    var d={utm_source:q.get('utm_source')||'',utm_medium:q.get('utm_medium')||'',utm_campaign:q.get('utm_campaign')||'',gclid:q.get('gclid')||'',referrer:ref,landing_page:location.pathname};
+    var d={utm_source:q.get('utm_source')||'',utm_medium:q.get('utm_medium')||'',utm_campaign:q.get('utm_campaign')||'',
+      gclid:q.get('gclid')||'',referrer:ref,landing_page:location.pathname+location.search,ts:Date.now()};
     d.lead_source=classify(d); return d;
   }
-  var stored=null; try{stored=JSON.parse(sessionStorage.getItem(KEY)||'null')}catch(e){}
+  function read(store,k){try{return JSON.parse(store.getItem(k)||'null')}catch(e){return null}}
+  function write(d){try{sessionStorage.setItem(KEY,JSON.stringify(d))}catch(e){}try{localStorage.setItem(LKEY,JSON.stringify(d))}catch(e){}}
+  var stored=read(window.sessionStorage,KEY);
+  if(!stored){var l=read(window.localStorage,LKEY); if(l&&l.ts&&Date.now()-l.ts<TTL) stored=l;}
   var now=current();
-  var hasSignal=now.utm_source||now.utm_medium||now.gclid||now.referrer;
-  // keep first touch for the session; a new tagged/referred arrival overrides an untagged one
-  if(!stored||(hasSignal&&!(stored.utm_source||stored.gclid||stored.referrer))){stored=now;try{sessionStorage.setItem(KEY,JSON.stringify(stored))}catch(e){}}
+  // first touch wins; a tagged/referred arrival replaces an untagged first touch
+  if(!stored||(signal(now)&&!signal(stored))){stored=now;write(stored)}
+  else if(!read(window.sessionStorage,KEY)){try{sessionStorage.setItem(KEY,JSON.stringify(stored))}catch(e){}}
+  if(!stored.landing_page)stored.landing_page='';
   window.ecLeadSource=stored;
-  var FIELDS=['lead_source','utm_source','utm_medium','utm_campaign','gclid','referrer'];
+  var FIELDS=['lead_source','utm_source','utm_medium','utm_campaign','gclid','referrer','landing_page'];
   function fill(){
     var forms=document.querySelectorAll('form[action*="formsubmit.co"]');
     for(var i=0;i<forms.length;i++){
@@ -36,6 +43,15 @@
         if(!el){el=document.createElement('input');el.type='hidden';el.name=n;forms[i].appendChild(el)}
         el.value=stored[n]||'';
       }
+    }
+    // booking widget links: carry stored UTMs/gclid so HighLevel records attribution
+    var links=document.querySelectorAll('a[href*="leadconnectorhq.com/widget/booking"]');
+    for(var k=0;k<links.length;k++){
+      try{
+        var u=new URL(links[k].href);
+        ['utm_source','utm_medium','utm_campaign','gclid'].forEach(function(p){if(stored[p]&&!u.searchParams.get(p))u.searchParams.set(p,stored[p])});
+        links[k].href=u.toString();
+      }catch(e){}
     }
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fill);else fill();
@@ -52,7 +68,8 @@
       message:val(f,'message'),_honey:val(f,'_honey'),
       lead_source:val(f,'lead_source')||src.lead_source||'',utm_source:val(f,'utm_source')||src.utm_source||'',
       utm_medium:val(f,'utm_medium')||src.utm_medium||'',utm_campaign:val(f,'utm_campaign')||src.utm_campaign||'',
-      gclid:val(f,'gclid')||src.gclid||'',referrer:val(f,'referrer')||src.referrer||'',page:location.href};
+      gclid:val(f,'gclid')||src.gclid||'',referrer:val(f,'referrer')||src.referrer||'',
+      landing_page:val(f,'landing_page')||src.landing_page||'',page:location.href};
   }
   function send(data){
     var body=JSON.stringify(data);
