@@ -158,11 +158,13 @@ export async function handle(req, context, env, fetchImpl = fetch, now = Date.no
   suspect.push(...contentFlags(payload));
 
   if (suspect.length) {
-    payload.suspect = true; payload.lead_source = 'Suspect'; payload.suspect_reasons = suspect.join('; ');
+    // lead_source is never overwritten: a flagged lead keeps its real source (Google Maps, Website...)
+    // so attribution survives; routing uses the separate suspect / suspect_reasons fields.
+    payload.suspect = true; payload.suspect_reasons = suspect.join('; ');
     console.log(JSON.stringify({ we013: 'suspect', reasons: suspect }));
   } else { payload.suspect = false; payload.suspect_reasons = ''; }
-  // Interim default: suspects are SENT with the flag. Set LEAD_SUSPECT_MODE=skip once the Zap
-  // has its Suspect branch... or keep sending and let the Zap route them (see PR).
+  // Default: suspects are SENT with suspect:true (Zap routes on the suspect field, not lead_source).
+  // LEAD_SUSPECT_MODE=skip drops them instead.
   if (payload.suspect && env.LEAD_SUSPECT_MODE === 'skip') { logSkip('suspect (LEAD_SUSPECT_MODE=skip)', payload.page); return json(200, { ok: true, skipped: 'suspect', reasons: suspect }); }
 
   const g = decide(req, context, env);
