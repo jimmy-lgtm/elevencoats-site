@@ -62,8 +62,8 @@
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
     "lowPrice": "3000",
-    "highPrice": "11000",
-    "offerCount": "3"
+    "highPrice": "8500",
+    "offerCount": "2"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -71,24 +71,27 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Small kitchen",
-        "price": "3000",
+        "name": "Standard kitchen",
         "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "3000",
+          "maxPrice": "5500"
+        },
         "description": "$3,000 – $5,500"
       },
       {
         "@type": "Offer",
-        "name": "Medium kitchen",
-        "price": "4500",
+        "name": "Large kitchen, island or two-tone",
         "priceCurrency": "USD",
-        "description": "$4,500 – $8,500"
-      },
-      {
-        "@type": "Offer",
-        "name": "Large kitchen",
-        "price": "6500",
-        "priceCurrency": "USD",
-        "description": "$6,500 – $11,000"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "5500",
+          "maxPrice": "8500"
+        },
+        "description": "$5,500 – $8,500"
       }
     ]
   }
@@ -250,10 +253,10 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <div class="container">
 <div class="section-label">Why Refinish</div>
 <h2>Replacement vs. Refinishing</h2>
-<p>New kitchen cabinets in Phoenix run <strong>$15,000 – $45,000</strong> installed. Cabinet refinishing with Eleven Coats runs <strong>$2,500 – $6,000</strong> for a full kitchen — and delivers a finish that looks brand new. If your cabinet boxes are structurally sound, there's no reason to replace them.</p>
+<p>New kitchen cabinets in Phoenix run <strong>$15,000 – $45,000</strong> installed. Cabinet refinishing with Eleven Coats runs <strong>$3,000 – $5,500</strong> for a standard kitchen and <strong>$5,500 – $8,500</strong> for a large kitchen, island or two-tone — and delivers a finish that looks brand new. If your cabinet boxes are structurally sound, there's no reason to replace them.</p>
 <div class="grid-2">
 <div class="card"><h3>Cabinet Replacement</h3><p>$15,000 – $45,000. 4–8 weeks of disruption. Demolition waste. Same layout, different wood.</p></div>
-<div class="card" style="border-color:rgba(232,116,42,0.3)"><h3>Cabinet Refinishing ✓</h3><p>$2,500 – $6,000. 3–5 days. No demolition. Factory-smooth finish. Same cabinets, completely transformed look.</p></div>
+<div class="card" style="border-color:rgba(232,116,42,0.3)"><h3>Cabinet Refinishing ✓</h3><p>$3,000 – $5,500 for a standard kitchen; $5,500 – $8,500 for a large kitchen, island or two-tone. 3–5 days. No demolition. Factory-smooth finish. Same cabinets, completely transformed look.</p></div>
 </div>
 </div>
 </section>
@@ -280,9 +283,8 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <h2>Cabinet Refinishing Costs</h2>
 <div class="price-table">
 <div class="price-row"><span>Scope</span><span style="text-align:right">Typical Range</span></div>
-<div class="price-row"><span class="price-label">Small kitchen</span><span class="price-value">$3,000 – $5,500</span></div>
-<div class="price-row"><span class="price-label">Medium kitchen</span><span class="price-value">$4,500 – $8,500</span></div>
-<div class="price-row"><span class="price-label">Large kitchen</span><span class="price-value">$6,500 – $11,000</span></div>
+<div class="price-row"><span class="price-label">Standard kitchen</span><span class="price-value">$3,000 – $5,500</span></div>
+<div class="price-row"><span class="price-label">Large kitchen, island or two-tone</span><span class="price-value">$5,500 – $8,500</span></div>
 </div>
 <p style="color:var(--white);font-size:0.95rem;margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(232,116,42,0.1);border-left:3px solid var(--orange);max-width:640px"><strong>Minimum project size: $2,500.</strong> We focus on full kitchen refinishing projects — not single bathroom vanities or partial cabinet jobs.</p>
 </div>

@@ -78,9 +78,9 @@
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
     "lowPrice": "3500",
-    "highPrice": "18000",
-    "offerCount": "3",
-    "description": "Exterior repaint pricing by home size"
+    "highPrice": "50000",
+    "offerCount": "5",
+    "description": "Exterior repaint pricing by living square footage. Estate homes 8,750+ sq ft are typically $25,000 – $50,000+, quoted individually."
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -88,24 +88,63 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Small home exterior",
-        "price": "3500",
+        "name": "Exterior, up to 2,500 sq ft",
         "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "3500",
+          "maxPrice": "5500"
+        },
         "description": "$3,500 – $5,500"
       },
       {
         "@type": "Offer",
-        "name": "Medium home exterior",
-        "price": "5500",
+        "name": "Exterior, 2,500 – 4,250 sq ft",
         "priceCurrency": "USD",
-        "description": "$5,500 – $9,000"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "5000",
+          "maxPrice": "7000"
+        },
+        "description": "$5,000 – $7,000"
       },
       {
         "@type": "Offer",
-        "name": "Large home exterior",
-        "price": "9000",
+        "name": "Exterior, 4,250 – 6,250 sq ft",
         "priceCurrency": "USD",
-        "description": "$9,000 – $18,000+"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "7000",
+          "maxPrice": "12000"
+        },
+        "description": "$7,000 – $12,000"
+      },
+      {
+        "@type": "Offer",
+        "name": "Exterior, 6,250 – 8,750 sq ft",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "12000",
+          "maxPrice": "20000"
+        },
+        "description": "$12,000 – $20,000"
+      },
+      {
+        "@type": "Offer",
+        "name": "Estate home exterior, 8,750+ sq ft",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "25000",
+          "maxPrice": "50000"
+        },
+        "description": "Typically $25,000 – $50,000+, quoted individually"
       }
     ]
   }
@@ -302,11 +341,14 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <h2>What Exterior Painting Costs in Phoenix</h2>
 <p>Every job is unique, but here are real ranges based on jobs we've completed in the Valley. Get a written quote for your specific home.</p>
 <div class="price-table">
-<div class="price-row"><span>Job Type</span><span style="text-align:right">Typical Range</span></div>
-<div class="price-row"><span class="price-label">Small home</span><span class="price-value">$3,500 – $5,500</span></div>
-<div class="price-row"><span class="price-label">Medium home</span><span class="price-value">$5,500 – $9,000</span></div>
-<div class="price-row"><span class="price-label">Large home</span><span class="price-value">$9,000 – $18,000+</span></div>
+<div class="price-row"><span>Living Sq Ft</span><span style="text-align:right">Typical Range</span></div>
+<div class="price-row"><span class="price-label">Up to 2,500 sq ft</span><span class="price-value">$3,500 – $5,500</span></div>
+<div class="price-row"><span class="price-label">2,500 – 4,250 sq ft</span><span class="price-value">$5,000 – $7,000</span></div>
+<div class="price-row"><span class="price-label">4,250 – 6,250 sq ft</span><span class="price-value">$7,000 – $12,000</span></div>
+<div class="price-row"><span class="price-label">6,250 – 8,750 sq ft</span><span class="price-value">$12,000 – $20,000</span></div>
+<div class="price-row"><span class="price-label">Estate homes, 8,750+ sq ft</span><span class="price-value">Typically $25,000 – $50,000+, quoted individually</span></div>
 </div>
+<p>What moves the price: stories, stucco repair, wood trim and fascia, site walls, number of colors, lot size and outbuildings.</p>
 <p style="color:var(--white);font-size:0.95rem;margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(232,116,42,0.1);border-left:3px solid var(--orange);max-width:640px"><strong>Minimum project size: $2,500.</strong> We focus on full exteriors where we can do our best work — not touch-ups or partial repaints.</p>
 </div>
 </section>
