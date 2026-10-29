@@ -69,8 +69,28 @@
       lead_source:val(f,'lead_source')||src.lead_source||'',utm_source:val(f,'utm_source')||src.utm_source||'',
       utm_medium:val(f,'utm_medium')||src.utm_medium||'',utm_campaign:val(f,'utm_campaign')||src.utm_campaign||'',
       gclid:val(f,'gclid')||src.gclid||'',referrer:val(f,'referrer')||src.referrer||'',
-      landing_page:val(f,'landing_page')||src.landing_page||'',page:location.href};
+      landing_page:val(f,'landing_page')||src.landing_page||'',page:location.href,lead_token:tok.value||'',cf_turnstile_response:tsResp(f)};
   }
+  /* WE-013: signed page-load token (fetched once, refreshed hourly so an open tab never expires).
+     If the fetch fails the lead is still sent; the server flags it suspect instead of dropping it. */
+  var tok={value:''};
+  function getToken(){try{if(!window.fetch)return;fetch(ENDPOINT,{method:'GET',credentials:'omit',cache:'no-store'})
+    .then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.token)tok.value=j.token}).catch(function(){})}catch(e){}}
+  if(document.querySelector('form[action*="formsubmit.co"]')){getToken();setInterval(getToken,60*60*1000)}
+  /* WE-013: Cloudflare Turnstile. Empty site key = no widget, no verification (other checks still run).
+     response-field:false keeps the token OUT of the FormSubmit POST, so the email is unchanged. */
+  var TURNSTILE_SITE_KEY=(window.EC_CONFIG&&window.EC_CONFIG.turnstileSiteKey)||'';
+  function tsResp(f){return f.__ecTs||''}
+  function initTurnstile(){
+    if(!TURNSTILE_SITE_KEY)return;
+    var forms=document.querySelectorAll('form[action*="formsubmit.co"]');if(!forms.length)return;
+    window.__ecTsLoad=function(){forms.forEach(function(f){try{var d=document.createElement('div');d.className='ec-turnstile';
+      f.appendChild(d);window.turnstile.render(d,{sitekey:TURNSTILE_SITE_KEY,appearance:'interaction-only','response-field':false,
+      callback:function(t){f.__ecTs=t},'expired-callback':function(){f.__ecTs=''},'error-callback':function(){f.__ecTs=''}})}catch(e){}})};
+    var s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__ecTsLoad';
+    s.async=true;s.defer=true;document.head.appendChild(s);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initTurnstile);else initTurnstile();
   function send(data){
     var body=JSON.stringify(data);
     try{
