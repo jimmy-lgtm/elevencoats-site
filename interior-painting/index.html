@@ -69,9 +69,10 @@
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
-    "lowPrice": "4500",
-    "highPrice": "16000",
-    "offerCount": "3"
+    "lowPrice": "2500",
+    "highPrice": "10000",
+    "offerCount": "6",
+    "description": "Interior pricing by scope, not square footage. Larger homes are quoted individually. Interior doors are priced per door."
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -79,24 +80,70 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Small home interior",
-        "price": "4500",
+        "name": "Interior, a few rooms",
         "priceCurrency": "USD",
-        "description": "$4,500 – $6,500"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "2500",
+          "maxPrice": "4500"
+        },
+        "description": "From the $2,500 minimum to $4,500"
       },
       {
         "@type": "Offer",
-        "name": "Medium home interior",
-        "price": "6500",
+        "name": "Whole-home interior, up to 2,500 sq ft",
         "priceCurrency": "USD",
-        "description": "$6,500 – $9,500"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "4000",
+          "maxPrice": "6500"
+        },
+        "description": "$4,000 – $6,500"
       },
       {
         "@type": "Offer",
-        "name": "Large home interior",
-        "price": "9500",
+        "name": "Whole-home interior, 2,500 – 4,250 sq ft",
         "priceCurrency": "USD",
-        "description": "$9,500 – $16,000+"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "6500",
+          "maxPrice": "10000"
+        },
+        "description": "$6,500 – $10,000"
+      },
+      {
+        "@type": "Offer",
+        "name": "Whole-home interior, larger homes",
+        "priceCurrency": "USD",
+        "description": "Quoted individually"
+      },
+      {
+        "@type": "Offer",
+        "name": "Interior doors, doors-only job (sprayed, bonding primer)",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "150",
+          "unitText": "per door"
+        },
+        "description": "$150 per door"
+      },
+      {
+        "@type": "Offer",
+        "name": "Interior doors, part of a larger project (sprayed, bonding primer)",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "60",
+          "maxPrice": "80",
+          "unitText": "per door"
+        },
+        "description": "$60 – $80 per door"
       }
     ]
   }
@@ -215,6 +262,7 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
   gtag('config', 'AW-10855930192');
   gtag('config', 'G-SL8F1V0E9D');
 </script>
+<style>/* WE-018: real job photo strips */.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;max-width:1200px}.photo-strip.two{grid-template-columns:repeat(2,1fr);margin-top:2rem}.photo-strip figure{margin:0}.photo-strip img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,0.04)}.photo-strip figcaption{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem}@media(max-width:700px){.photo-strip{grid-template-columns:1fr 1fr;gap:0.75rem}.photo-strip.three figure:first-child{grid-column:1/-1}}</style>
 <style>/* WE-005: logo matches homepage (.brand from design.css) */a.brand{display:block;width:213px;flex-shrink:0}a.brand img{display:block;width:100%;height:auto}.footer-logo a.brand{width:185px}@media(max-width:900px){a.brand{width:188px}}@media(max-width:600px){a.brand,.footer-logo a.brand{width:169px}}@media(max-width:359px){a.brand{width:153px}}</style>
 <script src="/assets/js/lead-source.js?v=we016" defer></script>
 </head><body>
@@ -252,6 +300,7 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <a href="/contact" class="btn-large">Get a Free Estimate</a>
 <a href="tel:6028881281" class="btn-ghost">(602) 888-1281</a>
 </div>
+<div class="photo-strip three"><figure><img src="/assets/photos/services/interior-foyer-after-960.webp" srcset="/assets/photos/services/interior-foyer-after-480.webp 480w, /assets/photos/services/interior-foyer-after-960.webp 960w, /assets/photos/services/interior-foyer-after-1440.webp 1440w" sizes="(max-width:700px) 100vw, 380px" width="960" height="720" loading="eager" fetchpriority="high" alt="Freshly painted foyer walls, rotunda ceiling and door in a Scottsdale home"><figcaption>Walls, ceiling and doors · Scottsdale</figcaption></figure><figure><img src="/assets/photos/services/interior-hallway-after-960.webp" srcset="/assets/photos/services/interior-hallway-after-480.webp 480w, /assets/photos/services/interior-hallway-after-960.webp 960w, /assets/photos/services/interior-hallway-after-1440.webp 1440w" sizes="(max-width:700px) 50vw, 380px" width="960" height="720" loading="lazy" decoding="async" alt="Repainted hallway walls, baseboards and doors in a Scottsdale home"><figcaption>Hallway repaint · Scottsdale</figcaption></figure><figure><img src="/assets/photos/services/interior-door-black-after-960.webp" srcset="/assets/photos/services/interior-door-black-after-480.webp 480w, /assets/photos/services/interior-door-black-after-960.webp 960w, /assets/photos/services/interior-door-black-after-1440.webp 1440w" sizes="(max-width:700px) 50vw, 380px" width="960" height="720" loading="lazy" decoding="async" alt="Two-panel interior door painted black in a Paradise Valley home"><figcaption>Door painted black · Paradise Valley</figcaption></figure></div>
 </div>
 </section>
 
@@ -265,7 +314,7 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <div class="card"><div class="icon">🚪</div><h3>Doors &amp; Trim</h3><p>Baseboards, door casings, window sills — cut and finished to a crisp, clean edge. The difference between a good paint job and a great one.</p></div>
 <div class="card"><div class="icon">⬜</div><h3>Ceilings</h3><p>Popcorn removal, smooth finish application, or ceiling repaint. We prime before we paint so you get true, even coverage.</p></div>
 <div class="card"><div class="icon">🎨</div><h3>Accent Walls</h3><p>Single rooms, accent walls, or a full color change throughout. We'll help you nail the color selection if you're not sure yet.</p></div>
-<div class="card"><div class="icon">🏠</div><h3>New Construction</h3><p>Working with a builder or finishing a spec home? We handle new construction interiors from prime coat to final finish.</p></div>
+<div class="card"><div class="icon">🏠</div><h3>Just got the keys to a new build?</h3><p>Builders often charge a big markup for their paint upgrade and use flat, builder-grade paint. Many new-home owners skip the upgrade and have us repaint the whole interior after closing.</p></div>
 <div class="card"><div class="icon">🔧</div><h3>Drywall Repairs</h3><p>Holes, cracks, water stains, and skim-coat repairs before we paint. We handle prep in-house — no waiting for a second contractor.</p></div>
 </div>
 </div>
@@ -275,20 +324,28 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <div class="container">
 <div class="section-label">Pricing</div>
 <h2>Interior Painting Costs in Phoenix</h2>
-<p>Prices vary by scope, ceiling height, number of colors, and wall condition. These are real ranges from jobs we've completed in the Valley.</p>
+<p>Interior is priced by scope, not square footage. Prices also vary by ceiling height, number of colors, and wall condition. These are real ranges from jobs we've completed in the Valley.</p>
 <div class="price-table">
 <div class="price-row"><span>Scope</span><span style="text-align:right">Typical Range</span></div>
-<div class="price-row"><span class="price-label">Small home</span><span class="price-value">$4,500 – $6,500</span></div>
-<div class="price-row"><span class="price-label">Medium home</span><span class="price-value">$6,500 – $9,500</span></div>
-<div class="price-row"><span class="price-label">Large home</span><span class="price-value">$9,500 – $16,000+</span></div>
+<div class="price-row"><span class="price-label">A few rooms</span><span class="price-value">From the $2,500 minimum to $4,500</span></div>
+<div class="price-row"><span class="price-label">Whole home, up to 2,500 sq ft</span><span class="price-value">$4,000 – $6,500</span></div>
+<div class="price-row"><span class="price-label">Whole home, 2,500 – 4,250 sq ft</span><span class="price-value">$6,500 – $10,000</span></div>
+<div class="price-row"><span class="price-label">Larger homes</span><span class="price-value">Quoted individually</span></div>
 </div>
-<p style="color:var(--white);font-size:0.95rem;margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(232,116,42,0.1);border-left:3px solid var(--orange);max-width:640px"><strong>Minimum project size: $2,500.</strong> We focus on full-home interiors where we can do our best work — not single rooms or touch-ups.</p>
+<h3 style="margin-top:2rem">Interior Doors</h3>
+<p>Sprayed finish over a bonding primer.</p>
+<div class="price-table">
+<div class="price-row"><span>Job Type</span><span style="text-align:right">Price</span></div>
+<div class="price-row"><span class="price-label">Doors-only job</span><span class="price-value">$150 per door</span></div>
+<div class="price-row"><span class="price-label">Part of a larger project</span><span class="price-value">$60 – $80 per door</span></div>
+</div>
+<p style="color:var(--white);font-size:0.95rem;margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(232,116,42,0.1);border-left:3px solid var(--orange);max-width:640px"><strong>Minimum project size: $2,500.</strong> Single rooms are welcome, all the way up to full homes. We do full repaints, not touch-ups.</p>
 </div>
 </section>
 <section class="cta-band">
 <div class="container">
 <h2><span style="color:var(--white)">READY</span> <span style="color:var(--orange)">TO START?</span></h2>
-<p>Free in-person estimate. Written quote within 24 hours. We work around your schedule.</p>
+<p>Free in-person estimate within 48 hours, with a written quote during the visit. We work around your schedule.</p>
 <a href="/contact" class="btn-large">Get a Free Estimate</a>
 &nbsp;&nbsp;
 <a href="tel:6028881281" class="btn-ghost">(602) 888-1281</a>
