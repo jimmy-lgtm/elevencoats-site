@@ -69,7 +69,7 @@
       lead_source:val(f,'lead_source')||src.lead_source||'',utm_source:val(f,'utm_source')||src.utm_source||'',
       utm_medium:val(f,'utm_medium')||src.utm_medium||'',utm_campaign:val(f,'utm_campaign')||src.utm_campaign||'',
       gclid:val(f,'gclid')||src.gclid||'',referrer:val(f,'referrer')||src.referrer||'',
-      landing_page:val(f,'landing_page')||src.landing_page||'',page:location.href,lead_token:tok.value||'',cf_turnstile_response:tsResp(f)};
+      landing_page:val(f,'landing_page')||src.landing_page||'',page:location.href,heard_about:val(f,'heard_about'),lead_token:tok.value||'',cf_turnstile_response:tsResp(f)};
   }
   /* WE-013: signed page-load token (fetched once, refreshed hourly so an open tab never expires).
      If the fetch fails the lead is still sent; the server flags it suspect instead of dropping it. */

@@ -8,6 +8,13 @@ const clip = (v, n = 500) => (v == null ? '' : String(v)).trim().slice(0, n);
 const json = (status, body) => new Response(JSON.stringify(body), {
   status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
 
+export const HEARD_ABOUT = ['Google', 'ChatGPT/AI', 'Realtor', 'Yard sign/truck', 'Referral', 'Other'];
+export function heardAbout(v) {
+  const t = clip(v, 40);
+  if (!t) return '';
+  return HEARD_ABOUT.find(o => o.toLowerCase() === t.toLowerCase()) || 'Other';
+}
+
 export function buildPayload(d) {
   // client-supplied lead_key is ignored: only fields below are kept
   const name = clip(d.name, 120).replace(/\s+/g, ' ');
@@ -28,6 +35,8 @@ export function buildPayload(d) {
     referrer: clip(d.referrer, 500),
     landing_page: clip(d.landing_page, 500),
     page: clip(d.page, 500),
+    // WE-019: optional "How did you hear about us?" answer. Unknown values become 'Other'; blank stays blank.
+    heard_about: heardAbout(d.heard_about),
   };
 }
 
