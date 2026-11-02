@@ -178,8 +178,9 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
   gtag('config', 'G-SL8F1V0E9D');
 </script>
 <style>/* WE-005: logo matches homepage (.brand from design.css) */a.brand{display:block;width:213px;flex-shrink:0}a.brand img{display:block;width:100%;height:auto}.footer-logo a.brand{width:185px}@media(max-width:900px){a.brand{width:188px}}@media(max-width:600px){a.brand,.footer-logo a.brand{width:169px}}@media(max-width:359px){a.brand{width:153px}}</style>
+<link rel="stylesheet" href="/assets/we019/mobile-quote.css">
 <script src="/assets/js/lead-config.js?v=we013" defer></script>
-<script src="/assets/js/lead-source.js?v=we013w016" defer></script>
+<script src="/assets/js/lead-source.js?v=we019" defer></script>
 </head><body>
 <header id="navbar">
 <div class="container">
@@ -210,6 +211,20 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <span class="line-orange">PAINTING.</span>
 <span class="line-teal">VALLEY-WIDE.</span>
 </h1>
+<!-- WE-019: mobile-only short quote form (same FormSubmit action, honeypot and lead-source.js / lead.js spam checks as the homepage form) -->
+<section class="m-quote" aria-labelledby="mq-title-commercial">
+<h2 id="mq-title-commercial">Request a Quote</h2>
+<form action="https://formsubmit.co/jim@11coats.com" method="POST" aria-labelledby="mq-title-commercial">
+<input type="hidden" name="_subject" value="New estimate request from elevencoatspainting.com"><input type="hidden" name="_next" value="https://elevencoatspainting.com/thank-you/">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="lead_source" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="gclid" value=""><input type="hidden" name="referrer" value="">
+<div class="mq-f"><label for="mq-name-commercial">Name (required)</label><input id="mq-name-commercial" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+<div class="mq-f"><label for="mq-phone-commercial">Phone (required)</label><input id="mq-phone-commercial" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" required></div>
+<div class="mq-f mq-wide"><label for="mq-heard-commercial">How did you hear about us? (optional)</label><select id="mq-heard-commercial" name="heard_about"><option value="">Choose one (optional)</option><option>Google</option><option>ChatGPT/AI</option><option>Realtor</option><option>Yard sign/truck</option><option>Referral</option><option>Other</option></select></div>
+<button type="submit">Request My Quote</button>
+<p class="mq-note">Or call <a href="tel:6028881281">(602) 888-1281</a>. <a href="/privacy-policy/">Privacy policy</a></p>
+</form>
+</section>
+
 <p class="hero-sub">HOAs, multifamily, retail, and office buildings across Phoenix and Scottsdale. On schedule. On budget. No surprises.</p>
 <div class="hero-ctas">
 <a href="/contact" class="btn-large">Get a Quote</a>
@@ -256,7 +271,7 @@ footer{background:var(--bg-footer);border-top:1px solid var(--border)}
 <div class="footer-logo"><a class="brand" href="/"><img src="/assets/homepage-20261021/logo-horizontal-dark.png" width="1024" height="302" alt="Eleven Coats Painting" loading="lazy"></a>
 </div>
 <p class="footer-tagline">The right people. Whatever it takes. Serving Scottsdale, Phoenix, and the greater Valley. Founded in 2019.</p>
-<div class="footer-badge">9-Year Exterior Warranty</div>
+<div class="footer-badge">Up to 9-Year Exterior Warranty</div>
 </div>
 <div class="footer-col">
 <h4>Services</h4>

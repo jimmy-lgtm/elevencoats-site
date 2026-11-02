@@ -1,0 +1,15 @@
+/* WE-019: compact quote form shown at the top of service and city pages on mobile only. Hidden (display:none) on wider screens so desktop layout is unchanged. */
+.m-quote{display:none}
+@media(max-width:767px){
+.m-quote{display:block;margin:0 0 1.75rem;padding:1rem;border:1px solid rgba(245,244,240,.18);border-radius:6px;background:rgba(255,255,255,.04);max-width:520px}
+.m-quote h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:1.5rem;line-height:1;margin:0 0 .75rem;color:#f5f4f0}
+.m-quote form{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.m-quote .mq-f{display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.m-quote .mq-wide{grid-column:1/-1}
+.m-quote label{font-size:.75rem;color:#c7ccd1;letter-spacing:.04em}
+.m-quote input,.m-quote select{height:44px;border:1px solid #949da8;border-radius:4px;background:#fff;color:#202831;padding:0 .7rem;font-size:16px;font-family:inherit;width:100%}
+.m-quote input:focus-visible,.m-quote select:focus-visible,.m-quote button:focus-visible{outline:3px solid #edb085;outline-offset:2px}
+.m-quote button{grid-column:1/-1;min-height:48px;border:0;border-radius:4px;background:#e8622a;color:#fff;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:.05em;font-family:'Barlow Condensed',sans-serif;cursor:pointer}
+.m-quote .mq-note{grid-column:1/-1;font-size:.72rem;color:#aab3bb;margin:0}
+.m-quote .mq-note a{color:inherit;text-decoration:underline}
+}

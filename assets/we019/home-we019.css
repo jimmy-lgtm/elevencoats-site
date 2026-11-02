@@ -1,0 +1,23 @@
+/* WE-019 homepage: warranty-led H1, heard-about dropdown, mobile form above the fold */
+.we019-h1 .h1-intro{font-size:30px;max-width:520px}
+.we019-h1 .h1-emotion{font-size:52px;max-width:560px}
+.hero-warranty-note{font-size:13px;color:var(--soft);margin-top:10px;max-width:470px;line-height:1.5}
+.hero-warranty-note a{color:var(--light);text-decoration:underline;text-underline-offset:3px}
+.inline-quote-form .quote-field select{color-scheme:light;display:block;height:44px;border:1px solid #949da8;background:#fff;border-radius:3px;color:#202831;padding:0 12px;font-size:16px;width:100%}
+.inline-quote-form .quote-field select:focus-visible{outline:3px solid #edb085;outline-offset:3px}
+@media(max-width:1100px) and (min-width:901px){.we019-h1 .h1-intro{font-size:26px}.we019-h1 .h1-emotion{font-size:44px}}
+@media(max-width:900px){.we019-h1 .h1-emotion{font-size:54px}}
+@media(max-width:767px){
+.hero-copy{display:flex;flex-direction:column;padding-top:16px}
+.we019-h1 .h1-intro{font-size:22px;max-width:340px}
+.we019-h1 .h1-emotion{font-size:34px;line-height:1.02;max-width:360px;margin-top:6px}
+.hero-warranty-note{font-size:12px;margin-top:6px}
+.hero-welcome,.hero-area{font-size:13px;margin-top:6px}
+.hero-quote{order:3;margin-top:14px}
+.hero-quote h2{font-size:24px;margin-bottom:10px}
+.hero-proof{order:4;margin-top:22px}
+.quote-fields{grid-template-columns:1fr 1fr;gap:10px}
+.inline-quote-form .quote-field input,.inline-quote-form .quote-field select{height:44px;min-height:44px}
+.inline-quote-form .quote-field label{font-size:12px;margin-bottom:4px}
+.quote-submit{margin-top:12px;min-height:48px}
+}
