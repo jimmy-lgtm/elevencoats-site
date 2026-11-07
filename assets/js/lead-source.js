@@ -10,6 +10,7 @@
   function inList(h,list){for(var i=0;i<list.length;i++){if(h===list[i]||h.slice(-(list[i].length+1))==='.'+list[i])return true}return false}
   function classify(d){
     var s=(d.utm_source||'').toLowerCase(), m=(d.utm_medium||'').toLowerCase(), rh=host(d.referrer);
+    if(s==='qr'&&m==='yard-sign') return 'QR Sign';
     if(s==='lsa'||m==='lsa') return 'LSA';
     if(MAPS_SRC.indexOf(s)>-1) return 'Google Maps';
     if(/^maps\.google\./.test(rh)||(/(^|\.)google\.[a-z.]+$/.test(rh)&&path(d.referrer).indexOf('/maps')===0)) return 'Google Maps';
@@ -30,7 +31,8 @@
   if(!stored){var l=read(window.localStorage,LKEY); if(l&&l.ts&&Date.now()-l.ts<TTL) stored=l;}
   var now=current();
   // first touch wins; a tagged/referred arrival replaces an untagged first touch
-  if(!stored||(signal(now)&&!signal(stored))){stored=now;write(stored)}
+  // QR sign scans win over an older stored touch so a past visit can't overwrite the sign
+  if(!stored||(signal(now)&&!signal(stored))||now.lead_source==='QR Sign'){stored=now;write(stored)}
   else if(!read(window.sessionStorage,KEY)){try{sessionStorage.setItem(KEY,JSON.stringify(stored))}catch(e){}}
   if(!stored.landing_page)stored.landing_page='';
   window.ecLeadSource=stored;
@@ -106,6 +108,9 @@
     var f=e.target;
     if(!f||!f.matches||!f.matches('form[action*="formsubmit.co"]'))return;
     if(e.defaultPrevented||f.__ecSent)return;          // invalid (validation stopped it) or already sent
+    if(/^deploy-preview-|--/.test(location.hostname)||location.hostname==='localhost'){ // preview: never reach real services
+      e.preventDefault();var pv=f.querySelector('.ec-preview-note');if(!pv){pv=document.createElement('p');pv.className='ec-preview-note';f.appendChild(pv)}
+      pv.textContent='Preview only: this form was not sent. Payload: '+JSON.stringify(payload(f));return;}
     var data=payload(f);
     if(data._honey)return;                              // honeypot: skip hook, native submit continues
     f.__ecSent=true;
