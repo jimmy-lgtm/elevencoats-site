@@ -78,7 +78,8 @@
   var tok={value:''};
   function getToken(){try{if(!window.fetch)return;fetch(ENDPOINT,{method:'GET',credentials:'omit',cache:'no-store'})
     .then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.token)tok.value=j.token}).catch(function(){})}catch(e){}}
-  if(document.querySelector('form[action*="formsubmit.co"]')){getToken();setInterval(getToken,60*60*1000)}
+  var IS_PREVIEW=/^deploy-preview-|--/.test(location.hostname)||location.hostname==='localhost';
+  if(!IS_PREVIEW&&document.querySelector('form[action*="formsubmit.co"]')){getToken();setInterval(getToken,60*60*1000)}
   /* WE-013: Cloudflare Turnstile. Empty site key = no widget, no verification (other checks still run).
      response-field:false keeps the token OUT of the FormSubmit POST, so the email is unchanged. */
   var TURNSTILE_SITE_KEY=(window.EC_CONFIG&&window.EC_CONFIG.turnstileSiteKey)||'';
