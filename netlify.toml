@@ -4,3 +4,9 @@
 
 [functions]
   directory = "netlify/functions"
+
+# QR landing page: keep out of search
+[[headers]]
+  for = "/neighbors/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
